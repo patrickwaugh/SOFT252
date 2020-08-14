@@ -86,8 +86,145 @@ public class ReadData {
         }
         
         
+        public static List<Admin> returnAdmins()
+        { 
+        List<Admin> adminList = new ArrayList<>();
+        
+        JSONParser parser = new JSONParser();
+        
+           
+         
+        try (Reader reader = new FileReader("src\\Data\\admins.json"))
+        {
+           JSONObject jsonObject = (JSONObject) parser.parse(reader); //Parse the JSON object
+           
+            JSONArray admins = (JSONArray) jsonObject.get("admins");
+            
+            for (int i = 0; i < admins.size(); i++) {
+                JSONObject currentAdmin = (JSONObject) admins.get(i);
+                
+                String userId = currentAdmin.get("userId").toString();
+                
+                String password = currentAdmin.get("password").toString();
+                
+                String name = currentAdmin.get("name").toString();
+                
+                String address = currentAdmin.get("address").toString();
+                
+                adminList.add(new Admin(userId, name, address, password));
+            }
+           
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        catch (ParseException e)
+        {
+            e.printStackTrace();
+        }
+        
+        return adminList;
+        }
         
         
+        
+        public static List<Doctor> returnDoctors()
+        { 
+        List<Doctor> doctorList = new ArrayList<>();
+        
+        JSONParser parser = new JSONParser();
+        
+           
+         
+        try (Reader reader = new FileReader("src\\Data\\doctors.json"))
+        {
+           JSONObject jsonObject = (JSONObject) parser.parse(reader); //Parse the JSON object
+           
+            JSONArray doctors = (JSONArray) jsonObject.get("doctors");
+            
+            for (int i = 0; i < doctors.size(); i++) {
+                JSONObject currentDoctor = (JSONObject) doctors.get(i);
+                
+                String userId = currentDoctor.get("userId").toString();
+                
+                String password = currentDoctor.get("password").toString();
+                
+                String name = currentDoctor.get("name").toString();
+                
+                String address = currentDoctor.get("address").toString();
+                
+                doctorList.add(new Doctor(userId, name, address, password));
+            }
+           
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        catch (ParseException e)
+        {
+            e.printStackTrace();
+        }
+        
+        return doctorList;
+        }
     
     
+        
+        
+        public static List<Secretary> returnSecretaries()
+        { 
+        List<Secretary> secretaryList = new ArrayList<>();
+        
+        JSONParser parser = new JSONParser();
+        
+           
+         
+        try (Reader reader = new FileReader("src\\Data\\secretaries.json"))
+        {
+           JSONObject jsonObject = (JSONObject) parser.parse(reader); //Parse the JSON object
+           
+            JSONArray secretaries = (JSONArray) jsonObject.get("secretaries");
+            
+            for (int i = 0; i < secretaries.size(); i++) {
+                JSONObject currentSecretary = (JSONObject) secretaries.get(i);
+                
+                String userId = currentSecretary.get("userId").toString();
+                
+                String password = currentSecretary.get("password").toString();
+                
+                String name = currentSecretary.get("name").toString();
+                
+                String address = currentSecretary.get("address").toString();
+                
+                secretaryList.add(new Secretary(userId, name, address, password));
+            }
+           
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        catch (ParseException e)
+        {
+            e.printStackTrace();
+        }
+        
+        return secretaryList;
+        }
+        
+        
 }

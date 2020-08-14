@@ -10,7 +10,6 @@ package GUI;
  * @author patrick
  */
 import GUI.*;
-import GUI.patient.*;
 import Users.*;
 import System.*;
 import java.util.*;
@@ -116,6 +115,9 @@ public class LoginScreen extends javax.swing.JFrame {
         String password = new String (passwordBox.getPassword());
         
         List<Patient> patients = main.patients;
+        List<Secretary> secretaries = main.secretaries;
+        List<Doctor> doctors = main.doctors;
+        List<Admin> admins = main.admins;
         
         char first = id.charAt(0);
         if (first == 'P')
@@ -137,8 +139,8 @@ public class LoginScreen extends javax.swing.JFrame {
                         System.out.println("Password Match");
                         main.currentUser = patients.get(i);
  
-                        patientDashboard dash = new patientDashboard();
-                        dash.setVisible(true);
+                       // patientDashboard dash = new patientDashboard();
+                        //dash.setVisible(true);
                         
                     }
                  this.setVisible(false);
@@ -146,7 +148,7 @@ public class LoginScreen extends javax.swing.JFrame {
                 }
                 else
                 {
-                    System.out.println("*NO* Password Match");
+                    System.out.println("No Password Match");
                     JFrame frame = new JFrame();
                     JOptionPane.showMessageDialog(frame, "Incorrect Username or Password, please try again");
                 }
@@ -155,17 +157,105 @@ public class LoginScreen extends javax.swing.JFrame {
         }
             
             
+            
         
             
         
     }//GEN-LAST:event_btnSubmitActionPerformed
-    
+    else if (first == 'A')
+    {
+        for (int i =0; i < admins.size(); i++){
+            System.out.println("Stored username: " + admins.get(i).getUserId());
+            if(id.equals(admins.get(i).getUserId()))
+            {
+                System.out.println("Username Match");
+                if (password.equals(admins.get(i).getPassword()))
+                {
+                        System.out.println("Password Match");
+                        main.currentUser = admins.get(i);
+ 
+                       // adminDashboard dash = new adminDashboard();
+                        //dash.setVisible(true);
+                        
+                    }
+                 this.setVisible(false);
+                 break;   
+                }
+                else
+                {
+                    System.out.println("No Password Match");
+                    JFrame frame = new JFrame();
+                    JOptionPane.showMessageDialog(frame, "Incorrect Username or Password, please try again");
+                }
+               
+            }
+        }
+    else if (first == 'D')
+    {
+        for (int i =0; i < doctors.size(); i++){
+            System.out.println("Stored username: " + doctors.get(i).getUserId());
+            if(id.equals(doctors.get(i).getUserId()))
+            {
+                System.out.println("Username Match");
+                if (password.equals(doctors.get(i).getPassword()))
+                {
+                        System.out.println("Password Match");
+                        main.currentUser = doctors.get(i);
+ 
+                      // doctorDashboard dash = new doctorDashboard();
+                       // dash.setVisible(true);
+                        
+                    }
+                 this.setVisible(false);
+                 break;   
+                }
+                else
+                {
+                    System.out.println("No Password Match");
+                    JFrame frame = new JFrame();
+                    JOptionPane.showMessageDialog(frame, "Incorrect Username or Password, please try again");
+                }
+               
+            }
+        }
+         
+        
+        else if (first == 'S')
+    {
+        for (int i =0; i < secretaries.size(); i++){
+            System.out.println("Stored username: " + secretaries.get(i).getUserId());
+            if(id.equals(secretaries.get(i).getUserId()))
+            {
+                System.out.println("Username Match");
+                if (password.equals(secretaries.get(i).getPassword()))
+                {
+                        System.out.println("Password Match");
+                        main.currentUser = secretaries.get(i);
+ 
+                       // secretarieDashboard dash = new secretarieDashboard();
+                       // dash.setVisible(true);
+                        
+                    }
+                 this.setVisible(false);
+                 break;   
+                }
+                else
+                {
+                    System.out.println("No Password Match");
+                    JFrame frame = new JFrame();
+                    JOptionPane.showMessageDialog(frame, "Incorrect Username or Password, please try again");
+                }
+               
+            }
+        }
+        
     }
+
     /**
      * @param args the command line arguments
      */
     
-
+        
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSubmit;
     private javax.swing.JButton jButton1;

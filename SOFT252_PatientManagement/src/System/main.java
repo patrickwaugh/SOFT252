@@ -24,12 +24,25 @@ public class main {
         List<Patient> patientsList = ReadData.returnPatients();
         patients = patientsList;
         
+        List<Admin> adminsList = ReadData.returnAdmins();
+        admins = adminsList;
+        
+        List<Doctor> doctorsList = ReadData.returnDoctors();
+        doctors = doctorsList;
+        
+        List<Secretary> secretariesList = ReadData.returnSecretaries();
+        secretaries = secretariesList;
+        
+        
 
         LoginScreen logon = new LoginScreen();
         logon.setVisible(true);
     }
     public static Person currentUser;
     public static List<Patient> patients;
+    public static List<Admin> admins;
+    public static List<Doctor> doctors;
+    public static List<Secretary> secretaries;
     
    
     
