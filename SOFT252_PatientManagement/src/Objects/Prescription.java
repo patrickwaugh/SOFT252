@@ -16,7 +16,7 @@ public class Prescription
     protected int quantity;
     
 
-    public Prescription(String doctor, String patient, Medicine medicine,int quantity, String dosage ) {
+    public Prescription(String doctor, String patient, Medicine medicine, int quantity, String dosage) {
         this.doctor = doctor;
         this.patient = patient;
         this.dosage = dosage;

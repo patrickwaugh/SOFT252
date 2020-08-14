@@ -1,0 +1,78 @@
+{ "users": [
+         {"patients":[
+		{	
+			"userId": "P0001",
+			"password": "p0001",
+			"name": "Bob Dylan",
+			"address": "Robbins Hall of Residence, Gibbon Street, Plymouth, PL4 8PR",
+                        "sex": "Male",
+			"age": 75
+                        
+		},
+		{
+			"userId": "P0002",
+			"password": "p0002",
+			"name": "Nick Cave",
+			"address": "Robbins Hall of Residence, Gibbon Street, Plymouth, PL4 8PR",
+                        "sex": "Male",
+                        "age": 49
+		},
+                {
+			"userId": "P0003",
+			"password": "patient3",
+			"name": "Joni Mitchell",
+			"address": "Robbins Hall of Residence, Gibbon Street, Plymouth, PL4 8PR",
+                        "sex": "Female",
+			"age": 27
+                }]
+        },
+	{"doctors":[
+		{	
+			"userId": "D0001",
+			"password": "d0001",
+			"name": "Nick Drake",
+			"address": "Robbins Hall of Residence, Gibbon Street, Plymouth, PL4 8PR"
+		},
+		{
+			"userId": "D0002",
+			"password": "d0002",
+			"name": "Harrison Ford",
+			"address": "Robbins Hall of Residence, Gibbon Street, Plymouth, PL4 8PR"
+		},
+                {
+			"userId": "D0003",
+			"password": "d0003",
+			"name": "Samuel Jackson",
+			"address": "Robbins Hall of Residence, Gibbon Street, Plymouth, PL4 8PR"
+                }]
+        },
+        {"secretaries":[
+		{	
+			"userId": "S0001",
+			"password": "s0001"
+		},
+		{
+			"userId": "S0002",
+			"password": "s0002"
+		},
+                {
+			"userId": "S0003",
+			"password": "s0003"
+                }]
+        },
+        {"admins":[
+		{	
+			"userId": "A0001",
+			"password": "a0001"
+		},
+		{
+			"userId": "A0002",
+			"password": "a0002"
+		},
+                {
+			"userId": "A0003",
+			"password": "a0003"
+                }]
+        }
+]
+}
