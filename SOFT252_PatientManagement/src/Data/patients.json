@@ -1,0 +1,27 @@
+{"patients":[
+		{	
+			"userId": "P0001",
+			"password": "p0001",
+			"name": "Bob Dylan",
+			"address": "Robbins Hall of Residence, Gibbon Street, Plymouth, PL4 8PR",
+                        "gender": "Male",
+			"age": 75
+                        
+		},
+		{
+			"userId": "P0002",
+			"password": "p0002",
+			"name": "Nick Cave",
+			"address": "Robbins Hall of Residence, Gibbon Street, Plymouth, PL4 8PR",
+                        "gender": "Male",
+                        "age": 49
+		},
+                {
+			"userId": "P0003",
+			"password": "patient3",
+			"name": "Joni Mitchell",
+			"address": "Robbins Hall of Residence, Gibbon Street, Plymouth, PL4 8PR",
+                        "gender": "Female",
+			"age": 27
+                }]
+}

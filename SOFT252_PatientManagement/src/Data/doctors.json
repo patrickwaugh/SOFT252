@@ -1,0 +1,20 @@
+{"doctors":[
+		{	
+			"userId": "D0001",
+			"password": "d0001",
+			"name": "Nick Drake",
+			"address": "Robbins Hall of Residence, Gibbon Street, Plymouth, PL4 8PR"
+		},
+		{
+			"userId": "D0002",
+			"password": "d0002",
+			"name": "Harrison Ford",
+			"address": "Robbins Hall of Residence, Gibbon Street, Plymouth, PL4 8PR"
+		},
+                {
+			"userId": "D0003",
+			"password": "d0003",
+			"name": "Samuel Jackson",
+			"address": "Robbins Hall of Residence, Gibbon Street, Plymouth, PL4 8PR"
+                }]
+        }

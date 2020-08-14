@@ -21,7 +21,4 @@ public class Patient extends Person
     this.password = password;
     }
 
-    
-    
-    
 }

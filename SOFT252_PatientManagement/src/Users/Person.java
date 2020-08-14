@@ -12,7 +12,7 @@ package Users;
 public class Person {
     protected String userId, password, name, address, gender;
     protected int age;
-    protected boolean logged_in;
+    protected boolean active;
 
     public String getUserId() {
         return userId;
@@ -62,12 +62,12 @@ public class Person {
         this.age = age;
     }
 
-    public boolean Logged_in() {
-        return logged_in;
+    public boolean Active() {
+        return active;
     }
 
-    public void setLogged_in(boolean active) {
-        this.logged_in = logged_in;
+    public void setActive(boolean active) {
+        this.active = active;
     }
     
     

@@ -1,0 +1,14 @@
+{"admins":[
+		{	
+			"userId": "A0001",
+			"password": "a0001"
+		},
+		{
+			"userId": "A0002",
+			"password": "a0002"
+		},
+                {
+			"userId": "A0003",
+			"password": "a0003"
+                }]
+        }
