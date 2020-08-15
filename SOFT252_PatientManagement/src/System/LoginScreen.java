@@ -177,10 +177,10 @@ public class LoginScreen extends javax.swing.JFrame {
  
                        // adminDashboard dash = new adminDashboard();
                         //dash.setVisible(true);
-                        
-                    }
-                 this.setVisible(false);
-                 break;   
+                        this.setVisible(false);
+                        break;  
+                    
+                  
                 }
                 else
                 {
@@ -188,7 +188,7 @@ public class LoginScreen extends javax.swing.JFrame {
                     JFrame frame = new JFrame();
                     JOptionPane.showMessageDialog(frame, "Incorrect Username or Password, please try again");
                 }
-               
+            }
             }
         }
     else if (first == 'D')
@@ -206,17 +206,16 @@ public class LoginScreen extends javax.swing.JFrame {
                         doctorDashboard dash = new doctorDashboard();
                         dash.setVisible(true);
                         
-                    }
-                 this.setVisible(false);
-                 break;   
-                }
+                        this.setVisible(false);
+                        break; 
+                } 
                 else
                 {
                     System.out.println("No Password Match");
                     JFrame frame = new JFrame();
                     JOptionPane.showMessageDialog(frame, "Incorrect Username or Password, please try again");
                 }
-               
+            } 
             }
         }
          
@@ -236,9 +235,8 @@ public class LoginScreen extends javax.swing.JFrame {
                        // secretarieDashboard dash = new secretarieDashboard();
                        // dash.setVisible(true);
                         
-                    }
-                 this.setVisible(false);
-                 break;   
+                       this.setVisible(false);
+                       break;     
                 }
                 else
                 {
@@ -246,7 +244,7 @@ public class LoginScreen extends javax.swing.JFrame {
                     JFrame frame = new JFrame();
                     JOptionPane.showMessageDialog(frame, "Incorrect Username or Password, please try again");
                 }
-               
+            }
             }
         }
         

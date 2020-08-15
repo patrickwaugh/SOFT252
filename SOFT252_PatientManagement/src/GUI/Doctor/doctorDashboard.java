@@ -42,7 +42,7 @@ public class doctorDashboard extends javax.swing.JFrame {
         for (int j =0; j<tableAppointments.size(); j++)
         {
             appointmentsTbl.setValueAt(tableAppointments.get(j).getAppointmentId(), j, 0);
-            appointmentsTbl.setValueAt(tableAppointments.get(j).getPatient().getUserId(), j, 1);
+            appointmentsTbl.setValueAt(tableAppointments.get(j).getPatient().getName(), j, 1);
             appointmentsTbl.setValueAt(tableAppointments.get(j).getDate(), j, 2);
         }
     }
