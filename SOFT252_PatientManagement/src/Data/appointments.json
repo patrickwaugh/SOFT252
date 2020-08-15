@@ -1,0 +1,33 @@
+{"appointments":[
+		{	
+                        "appointmentId":"1",
+			"patient": "P0001",
+			"doctor": "D0001",
+			"date": "10/10/2020",
+                        "state": "complete"
+		},
+		{
+                        "appointmentId":"2",
+			"patient": "P0002",
+			"doctor": "D0002",
+			"date": "10/15/2020",
+                        "state": "complete"
+
+		},
+                {
+                        "appointmentId":"3",
+			"patient": "P0001",
+			"doctor": "D0003",
+			"date": "10/13/2020",
+                        "state": "confirmed"
+
+		},
+                {
+                        "appointmentId":"4",
+			"patient": "P0003",
+			"doctor": "D0003",
+			"date": "10/20/2020",
+                        "state": "pending"
+
+                }]
+        }

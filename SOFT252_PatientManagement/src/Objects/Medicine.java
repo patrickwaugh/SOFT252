@@ -11,12 +11,21 @@ package Objects;
  */
 public class Medicine 
 {
-    protected String name;
+    protected String medicineId, name;
     protected boolean lowQuantity;
 
-    public Medicine(String name, boolean lowQuantity) {
+    public Medicine(String medicineId, String name, boolean lowQuantity) {
+        this.medicineId = medicineId;
         this.name = name;
         this.lowQuantity = lowQuantity;
+    }
+    
+    public String getMedicineId() {
+        return medicineId;
+    }
+
+    public void setMedicineId(String medicineId) {
+        this.medicineId = medicineId;
     }
 
     public String getName() {

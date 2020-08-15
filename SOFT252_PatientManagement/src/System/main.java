@@ -14,12 +14,23 @@ import java.util.*;
 import System.*;
 import Users.*;
 import GUI.*;
+import Objects.*;
 public class main {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) 
+    {
+        
+        
+        
+
+        LoginScreen logon = new LoginScreen();
+        logon.setVisible(true);
+    }
+    
+    public static void loadUserData()
     {
         List<Patient> patientsList = ReadData.returnPatients();
         patients = patientsList;
@@ -32,18 +43,28 @@ public class main {
         
         List<Secretary> secretariesList = ReadData.returnSecretaries();
         secretaries = secretariesList;
+    }
+    
+    public static void loadObjectData()
+    {
+        List<Medicine> medicineList = ReadData.returnMedicines();
+        medicines = medicineList;
         
+        List<Prescription> prescriptionsList = ReadData.returnPrescriptions();
+        prescriptions = prescriptionsList;
         
-
-        LoginScreen logon = new LoginScreen();
-        logon.setVisible(true);
+        List<Appointment> appointmentsList = ReadData.returnAppointments();
+        appointments = appointmentsList;
+    
     }
     public static Person currentUser;
     public static List<Patient> patients;
     public static List<Admin> admins;
     public static List<Doctor> doctors;
     public static List<Secretary> secretaries;
-    
+    public static List<Appointment> appointments;
+    public static List<Medicine> medicines;
+    public static List<Prescription> prescriptions;
    
     
 

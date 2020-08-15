@@ -1,0 +1,61 @@
+{"medicines":[
+		{	
+                        "medicineId": "1",
+			"name": "med1",
+			"lowQuantity": "false"
+		},
+		{
+                        "medicineId": "2",
+			"name": "med2",
+			"lowQuantity": "false"
+
+		},
+                {
+                        "medicineId": "3",
+			"name": "med3",
+			"lowQuantity": "true"
+
+		},
+                {
+                        "medicineId": "4",
+			"name": "med4",
+			"lowQuantity": "false"
+
+		},
+                {
+                        "medicineId": "5",
+			"name": "med5",
+			"lowQuantity": "false"
+
+		},
+                {
+                        "medicineId": "6",
+			"name": "med6",
+			"lowQuantity": "true"
+
+		},
+                {
+                        "medicineId": "7",
+			"name": "med7",
+			"lowQuantity": "false"
+
+		},
+                {
+                        "medicineId": "8",
+			"name": "med8",
+			"lowQuantity": "false"
+
+		},
+                {
+                        "medicineId": "9",
+			"name": "med9",
+			"lowQuantity": "false"
+
+		},
+                {
+                        "medicineId": "10",
+			"name": "med10",
+			"lowQuantity": "true"
+
+                }]
+        }

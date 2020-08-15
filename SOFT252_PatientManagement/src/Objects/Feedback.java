@@ -11,8 +11,8 @@ import Users.Patient;
  * @author patrick
  */
 public class Feedback {
-    Patient patient;
-    Doctor doctor;
+    protected Patient patient;
+    protected Doctor doctor;
     protected String userId, name, feedback;
     protected int rating;
 

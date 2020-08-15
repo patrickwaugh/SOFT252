@@ -5,33 +5,47 @@
  */
 package Objects;
 
+import Users.Doctor;
+import Users.Patient;
 /**
  *
  * @author patrick
  */
 public class Appointment
 {
-    protected String patient, doctor, date;
+    protected Patient patient;
+    protected Doctor doctor;
+    protected String appointmentId, date, state;
     
-    public Appointment(String patient, String doctor, String date) {
+    public Appointment(String appointmentId, Patient patient, Doctor doctor, String date, String state) {
+        this.appointmentId = appointmentId;
         this.patient = patient;
         this.doctor = doctor;
         this.date = date;
+        this.state = state;
     }
 
-    public String getPatient() {
+    public String getAppointmentId() {
+        return appointmentId;
+    }
+
+    public void setAppointmentId(String appointmentId) {
+        this.appointmentId = appointmentId;
+    }
+    
+    public Patient getPatient() {
         return patient;
     }
 
-    public void setPatient(String patient) {
+    public void setPatient(Patient patient) {
         this.patient = patient;
     }
 
-    public String getDoctor() {
+    public Doctor getDoctor() {
         return doctor;
     }
 
-    public void setDoctor(String doctor) {
+    public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
     }
 
@@ -42,5 +56,12 @@ public class Appointment
     public void setDate(String date) {
         this.date = date;
     }
+    
+    public String getState() {
+        return state;
+    }
 
+    public void setState(String state) {
+        this.state = state;
+    }
 }

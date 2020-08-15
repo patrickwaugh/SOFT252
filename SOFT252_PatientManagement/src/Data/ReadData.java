@@ -8,19 +8,18 @@ package Data;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import java.util.*;
 import java.io.Reader;
-import java.io.File;
-import java.net.URL;
+import java.lang.Integer;
 
+import System.main;
 import Users.*;
 import Data.*;
+import Objects.*;
 
 /**
  *
@@ -226,5 +225,209 @@ public class ReadData {
         return secretaryList;
         }
         
+        
+        
+        public static List<Medicine> returnMedicines()
+        { 
+        List<Medicine> medicineList = new ArrayList<>();
+        
+        JSONParser parser = new JSONParser();
+        
+           
+         
+        try (Reader reader = new FileReader("src\\Data\\medecines.json"))
+        {
+           JSONObject jsonObject = (JSONObject) parser.parse(reader); //Parse the JSON object
+           
+            JSONArray medicines = (JSONArray) jsonObject.get("medicines");
+            
+            for (int i = 0; i < medicines.size(); i++) {
+                JSONObject currentMedicine = (JSONObject) medicines.get(i);
+                
+                String medicineId = currentMedicine.get(" medicineId").toString();
+                
+                String name = currentMedicine.get("name").toString();
+                
+                
+                String tempLowQuantity = currentMedicine.get("lowQuantity").toString();
+                char first = tempLowQuantity.charAt(0);
+                
+                boolean lowQuantity;
+                if (first == 'f')
+                {
+                    lowQuantity = false;
+                }
+                else
+                {
+                    lowQuantity = true;
+                }
+                
+                
+                medicineList.add(new Medicine(medicineId, name, lowQuantity));
+            }
+           
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        catch (ParseException e)
+        {
+            e.printStackTrace();
+        }
+        
+        return medicineList;
+        }
+        
+        
+        
+        
+        public static List<Appointment> returnAppointments()
+        { 
+        List<Appointment> appointmentList = new ArrayList<>();
+        
+        JSONParser parser = new JSONParser();      
+         
+        try (Reader reader = new FileReader("src\\Data\\appointment.json"))
+        {
+           JSONObject jsonObject = (JSONObject) parser.parse(reader); //Parse the JSON object
+           
+            JSONArray appointments = (JSONArray) jsonObject.get("appointments");
+            
+            for (int i = 0; i < appointments.size(); i++) {
+                JSONObject currentAppointment = (JSONObject) appointments.get(i);
+                
+                String appointmentId = currentAppointment.get("appointmentId").toString();
+                
+                String patientId = (currentAppointment.get("patient").toString());
+                
+                Patient patient = null;
+                for (int x = 0; x < main.patients.size(); x++)
+                {
+                    if (main.patients.get(x).getUserId().equals(patientId))
+                    {
+                        patient = main.patients.get(x);
+                    }     
+                }
+                
+                String doctorId = (currentAppointment.get("doctor").toString());
+                
+                Doctor doctor = null;
+                
+                for (int x = 0; x < main.doctors.size(); x++)
+                {
+                    if (main.doctors.get(x).getUserId().equals(doctorId))
+                    {
+                        doctor = main.doctors.get(x);
+                    }     
+                }
+                
+                String date = currentAppointment.get("date").toString();
+                
+                String state = currentAppointment.get("state").toString();
+                
+                
+                appointmentList.add(new Appointment(appointmentId, patient, doctor, date, state));
+            }
+           
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        catch (ParseException e)
+        {
+            e.printStackTrace();
+        }
+        
+        return appointmentList;
+        }
+        
+        
+        
+        public static List<Prescription> returnPrescriptions()
+        { 
+        List<Prescription> prescriptionList = new ArrayList<>();
+        
+        JSONParser parser = new JSONParser();      
+         
+        try (Reader reader = new FileReader("src\\Data\\prescription.json"))
+        {
+           JSONObject jsonObject = (JSONObject) parser.parse(reader); //Parse the JSON object
+           
+            JSONArray prescriptions = (JSONArray) jsonObject.get("prescriptions");
+            
+            for (int i = 0; i < prescriptions.size(); i++) {
+                JSONObject currentPrescription = (JSONObject) prescriptions.get(i);
+                
+                String prescriptionId = currentPrescription.get("prescriptionId").toString();
+
+                String patientId = (currentPrescription.get("patient").toString());
+                
+                Patient patient = null;
+                for (int x = 0; x < main.patients.size(); x++)
+                {
+                    if (main.patients.get(x).getUserId().equals(patientId))
+                    {
+                        patient = main.patients.get(x);
+                    }     
+                }
+                
+                String doctorId = (currentPrescription.get("doctor").toString());
+                
+                Doctor doctor = null;
+                
+                for (int x = 0; x < main.doctors.size(); x++)
+                {
+                    if (main.doctors.get(x).getUserId().equals(doctorId))
+                    {
+                        doctor = main.doctors.get(x);
+                    }     
+                }
+                
+                
+                String medicineId = (currentPrescription.get("medicineId").toString());
+                
+                Medicine medicine = null;
+                
+                for (int x = 0; x < main.medicines.size(); x++)
+                {
+                    if (main.medicines.get(x).getMedicineId().equals(medicineId))
+                    {
+                        medicine = main.medicines.get(x);
+                    }     
+                }
+                String dosage = currentPrescription.get("dosage").toString();
+                
+                int quantity = Integer.parseInt(currentPrescription.get("quantity").toString());
+                
+                
+                prescriptionList.add(new Prescription(prescriptionId, doctor, patient, medicine, quantity, dosage));
+            }
+           
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        catch (ParseException e)
+        {
+            e.printStackTrace();
+        }
+        
+        return prescriptionList;
+        }
         
 }

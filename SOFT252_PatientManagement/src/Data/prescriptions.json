@@ -1,0 +1,37 @@
+{"prescriptions":[
+		{	
+                        "prescriptionId": "1",
+			"patient": "P0001",
+			"doctor": "D0003",
+			"medicine": "",
+                        "dosage": "1 per day",
+                        "quantity": 10
+		},
+		{
+                        "prescriptionId": "2",
+			"patient": "P0002",
+			"doctor": "D0001",
+			"medicine": "",
+                        "dosage": "1 every 6 hours",
+                        "quantity": 15
+
+		},
+                {
+                        "prescriptionId": "3",
+			"patient": "P0003",
+			"doctor": "D0002",
+			"medicine": "",
+                        "dosage": "1 per day",
+                        "quantity": 10
+
+		},
+                {
+                        "prescriptionId": "4",
+			"patient": "P0001",
+			"doctor": "D0002",
+			"medicine": "",
+                        "dosage": "1 per day",
+                        "quantity": 20
+
+                }]
+        }

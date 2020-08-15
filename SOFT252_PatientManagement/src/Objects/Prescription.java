@@ -5,18 +5,23 @@
  */
 package Objects;
 
+import Users.Doctor;
+import Users.Patient;
 /**
  *
  * @author patrick
  */
 public class Prescription
 {
-    protected String doctor, patient, dosage;
+    protected Patient patient;
+    protected Doctor doctor;
+    protected String prescriptionId, dosage;
     protected Medicine medicine;
     protected int quantity;
     
 
-    public Prescription(String doctor, String patient, Medicine medicine, int quantity, String dosage) {
+    public Prescription(String prescriptionId, Doctor doctor, Patient patient, Medicine medicine, int quantity, String dosage) {
+        this.prescriptionId = prescriptionId;
         this.doctor = doctor;
         this.patient = patient;
         this.dosage = dosage;
@@ -24,19 +29,27 @@ public class Prescription
         this.medicine = medicine;
     }
 
-    public String getDoctor() {
+    public String getPrescriptionId() {
+        return prescriptionId;
+    }
+
+    public void setPrescriptionId(String prescriptionId) {
+        this.prescriptionId = prescriptionId;
+    }
+    
+    public Doctor getDoctor() {
         return doctor;
     }
 
-    public void setDoctor(String doctor) {
+    public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
     }
 
-    public String getPatient() {
+    public Patient getPatient() {
         return patient;
     }
 
-    public void setPatient(String patient) {
+    public void setPatient(Patient patient) {
         this.patient = patient;
     }
     
