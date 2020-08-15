@@ -13,6 +13,8 @@ import Users.*;
 
 import GUI.Doctor.doctorDashboard;
 import GUI.Patient.patientDashboard;
+import GUI.Admin.adminDashboard;
+import GUI.Secretary.secretaryDashboard;
 import java.util.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -175,8 +177,8 @@ public class LoginScreen extends javax.swing.JFrame {
                         System.out.println("Password Match");
                         main.currentUser = admins.get(i);
  
-                       // adminDashboard dash = new adminDashboard();
-                        //dash.setVisible(true);
+                        adminDashboard dash = new adminDashboard();
+                        dash.setVisible(true);
                         this.setVisible(false);
                         break;  
                     
@@ -232,8 +234,8 @@ public class LoginScreen extends javax.swing.JFrame {
                         System.out.println("Password Match");
                         main.currentUser = secretaries.get(i);
  
-                       // secretarieDashboard dash = new secretarieDashboard();
-                       // dash.setVisible(true);
+                       secretaryDashboard dash = new secretaryDashboard();
+                       dash.setVisible(true);
                         
                        this.setVisible(false);
                        break;     

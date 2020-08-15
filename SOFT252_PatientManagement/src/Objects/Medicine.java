@@ -36,11 +36,11 @@ public class Medicine
         this.name = name;
     }
 
-    public boolean isOrderRequired() {
+    public boolean isLowQuantity() {
         return lowQuantity;
     }
 
-    public void setOrderRequired(boolean lowQuantity) {
+    public void setLowQuantity(boolean lowQuantity) {
         this.lowQuantity = lowQuantity;
     }
     

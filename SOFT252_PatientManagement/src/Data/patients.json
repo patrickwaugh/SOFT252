@@ -21,6 +21,16 @@
 
 		},
                 {
+			"userId": "P0004",
+			"password": "p0004",
+			"name": "Bruce Springsteen",
+			"address": "Robbins Hall of Residence, Gibbon Street, Plymouth, PL4 8PR",
+                        "gender": "Male",
+                        "age": 41,
+                        "active": "false"
+
+		},
+                {
 			"userId": "P0003",
 			"password": "p0003",
 			"name": "Joni Mitchell",
