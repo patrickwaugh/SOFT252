@@ -3,11 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI.doctor;
+package GUI.Doctor;
 
 import javax.swing.table.DefaultTableModel;
 import System.main;
 import Objects.*;
+import java.util.*;
+import Users.Doctor;
 
 /**
  *
@@ -20,6 +22,39 @@ public class doctorDashboard extends javax.swing.JFrame {
      */
     public doctorDashboard() {
         initComponents();
+        
+        List<Appointment> appointments = main.appointments;
+
+        List<Appointment> tableAppointments = new ArrayList();
+        for (int i = 0; i< appointments.size(); i++)
+        {
+            Doctor d = appointments.get(i).getDoctor();
+            if (d.getUserId().equals(main.currentUser.getUserId()))
+            {
+                tableAppointments.add(appointments.get(i));
+            }
+        }
+        DefaultTableModel model = new DefaultTableModel();
+        model = (DefaultTableModel) appointmentsTbl.getModel();
+        model.setRowCount(0);
+        model.setRowCount(tableAppointments.size());
+        appointmentsTbl.setModel(model);
+        for (int j =0; j<tableAppointments.size(); j++)
+        {
+            appointmentsTbl.setValueAt(tableAppointments.get(j).getAppointmentId(), j, 0);
+            appointmentsTbl.setValueAt(tableAppointments.get(j).getPatient().getUserId(), j, 1);
+            appointmentsTbl.setValueAt(tableAppointments.get(j).getDate(), j, 2);
+        }
+    }
+    public static List<Appointment> addAppointment(List<Appointment> appointments, Appointment newAppointment){
+        List<Appointment> newAppointments = new ArrayList(appointments.size() + 1);
+        for (int i =0; i< appointments.size(); i++)
+        {
+            newAppointments.add(appointments.get(i));
+        }
+        
+        //newAppointments[oldAppointments.length] = newAppointment;
+        return newAppointments;
     }
     
 
@@ -45,15 +80,30 @@ public class doctorDashboard extends javax.swing.JFrame {
 
         appointmentsTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Patient", "Date"
+                "AppointmentID", "PatientID", "Date"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(appointmentsTbl);
 
         titleLbl.setText("Appointments");

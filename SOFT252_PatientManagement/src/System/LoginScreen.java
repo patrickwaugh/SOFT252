@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package System;
 
 /**
  *
  * @author patrick
  */
-import GUI.*;
 import Users.*;
-import System.*;
+
+import GUI.Doctor.doctorDashboard;
+import GUI.Patient.patientDashboard;
 import java.util.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -129,7 +130,7 @@ public class LoginScreen extends javax.swing.JFrame {
                 System.out.println("Username Match");
                 if (password.equals(patients.get(i).getPassword()))
                 {
-                    if (patients.get(i).Active() == false)
+                    if (patients.get(i).getActive().equals("false"))
                     {
                       JFrame frame = new JFrame();
                       JOptionPane.showMessageDialog(frame, "Your account is not active. A secretary needs to approve it.");  
@@ -139,8 +140,8 @@ public class LoginScreen extends javax.swing.JFrame {
                         System.out.println("Password Match");
                         main.currentUser = patients.get(i);
  
-                       // patientDashboard dash = new patientDashboard();
-                        //dash.setVisible(true);
+                        patientDashboard dash = new patientDashboard();
+                        dash.setVisible(true);
                         
                     }
                  this.setVisible(false);
@@ -202,8 +203,8 @@ public class LoginScreen extends javax.swing.JFrame {
                         System.out.println("Password Match");
                         main.currentUser = doctors.get(i);
  
-                      // doctorDashboard dash = new doctorDashboard();
-                       // dash.setVisible(true);
+                        doctorDashboard dash = new doctorDashboard();
+                        dash.setVisible(true);
                         
                     }
                  this.setVisible(false);

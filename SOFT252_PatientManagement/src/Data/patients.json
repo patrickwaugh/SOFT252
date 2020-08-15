@@ -5,7 +5,9 @@
 			"name": "Bob Dylan",
 			"address": "Robbins Hall of Residence, Gibbon Street, Plymouth, PL4 8PR",
                         "gender": "Male",
-			"age": 75
+			"age": 75,
+                        "active": "true"
+
                         
 		},
 		{
@@ -14,14 +16,17 @@
 			"name": "Nick Cave",
 			"address": "Robbins Hall of Residence, Gibbon Street, Plymouth, PL4 8PR",
                         "gender": "Male",
-                        "age": 49
+                        "age": 49,
+                        "active": "true"
+
 		},
                 {
 			"userId": "P0003",
-			"password": "patient3",
+			"password": "p0003",
 			"name": "Joni Mitchell",
 			"address": "Robbins Hall of Residence, Gibbon Street, Plymouth, PL4 8PR",
                         "gender": "Female",
-			"age": 27
+			"age": 27,
+                        "active": "true"
                 }]
 }

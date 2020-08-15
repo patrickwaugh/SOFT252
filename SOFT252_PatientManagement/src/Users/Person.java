@@ -10,9 +10,8 @@ package Users;
  * @author User
  */
 public class Person {
-    protected String userId, password, name, address, gender;
+    protected String userId, password, name, address, gender, active;
     protected int age;
-    protected boolean active;
 
     public String getUserId() {
         return userId;
@@ -62,11 +61,11 @@ public class Person {
         this.age = age;
     }
 
-    public boolean Active() {
+    public String getActive() {
         return active;
     }
 
-    public void setActive(boolean active) {
+    public void setActive(String active) {
         this.active = active;
     }
     

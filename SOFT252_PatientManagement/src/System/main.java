@@ -13,7 +13,6 @@ import Data.ReadData;
 import java.util.*;
 import System.*;
 import Users.*;
-import GUI.*;
 import Objects.*;
 public class main {
 
@@ -22,7 +21,8 @@ public class main {
      */
     public static void main(String[] args) 
     {
-        
+        loadUserData();
+        loadObjectData();
         
         
 

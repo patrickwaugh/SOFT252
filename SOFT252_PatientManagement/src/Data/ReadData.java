@@ -64,7 +64,9 @@ public class ReadData {
                 
                 String password = currentPatient.get("password").toString();
                 
-                patientList.add(new Patient(userId, name, address, gender, age, password));
+                String active = currentPatient.get("active").toString();
+                
+                patientList.add(new Patient(userId, name, address, gender, age, password, active));
             }
            
         }
@@ -235,7 +237,7 @@ public class ReadData {
         
            
          
-        try (Reader reader = new FileReader("src\\Data\\medecines.json"))
+        try (Reader reader = new FileReader("src\\Data\\medicines.json"))
         {
            JSONObject jsonObject = (JSONObject) parser.parse(reader); //Parse the JSON object
            
@@ -244,7 +246,7 @@ public class ReadData {
             for (int i = 0; i < medicines.size(); i++) {
                 JSONObject currentMedicine = (JSONObject) medicines.get(i);
                 
-                String medicineId = currentMedicine.get(" medicineId").toString();
+                String medicineId = currentMedicine.get("medicineId").toString();
                 
                 String name = currentMedicine.get("name").toString();
                 
@@ -292,7 +294,7 @@ public class ReadData {
         
         JSONParser parser = new JSONParser();      
          
-        try (Reader reader = new FileReader("src\\Data\\appointment.json"))
+        try (Reader reader = new FileReader("src\\Data\\appointments.json"))
         {
            JSONObject jsonObject = (JSONObject) parser.parse(reader); //Parse the JSON object
            
@@ -359,7 +361,7 @@ public class ReadData {
         
         JSONParser parser = new JSONParser();      
          
-        try (Reader reader = new FileReader("src\\Data\\prescription.json"))
+        try (Reader reader = new FileReader("src\\Data\\prescriptions.json"))
         {
            JSONObject jsonObject = (JSONObject) parser.parse(reader); //Parse the JSON object
            

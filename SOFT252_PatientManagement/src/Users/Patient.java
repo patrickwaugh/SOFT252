@@ -11,7 +11,7 @@ package Users;
  */
 public class Patient extends Person
 {    
-    public Patient(String userId, String name, String address, String gender, int age, String password)
+    public Patient(String userId, String name, String address, String gender, int age, String password, String active)
     {
     this.userId = userId;
     this.name = name;
@@ -19,6 +19,7 @@ public class Patient extends Person
     this.gender = gender;
     this.age = age;
     this.password = password;
+    this.active = active;
     }
 
 }
