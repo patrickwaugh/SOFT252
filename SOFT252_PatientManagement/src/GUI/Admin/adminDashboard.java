@@ -374,6 +374,29 @@ public class adminDashboard extends javax.swing.JFrame {
 
     private void removeDoctorBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeDoctorBtnActionPerformed
         // TODO add your handling code here:
+        int selected = doctorsTbl.getSelectedRow();
+        if (selected == -1)
+        {
+            JFrame frame = new JFrame();
+            JOptionPane.showMessageDialog(frame, "Please select an account to remove");
+        }
+        else 
+        {
+            Doctor doctor = null;
+            for (int i=0; i<main.doctors.size();i++)
+            {
+                if (main.doctors.get(i).getUserId().equals(doctorsTbl.getValueAt(selected, 0).toString()))
+                {
+                    doctor = main.doctors.get(i);
+                }
+            }
+            main.doctors.remove(doctor);
+            JFrame frame = new JFrame();
+            JOptionPane.showMessageDialog(frame, "Account has been removed");
+            this.dispose();
+            adminDashboard dash = new adminDashboard();
+            dash.setVisible(true);
+        }
     }//GEN-LAST:event_removeDoctorBtnActionPerformed
 
     private void addAdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAdminBtnActionPerformed
@@ -385,6 +408,29 @@ public class adminDashboard extends javax.swing.JFrame {
 
     private void removeAdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeAdminBtnActionPerformed
         // TODO add your handling code here:
+        int selected = adminsTbl.getSelectedRow();
+        if (selected == -1)
+        {
+            JFrame frame = new JFrame();
+            JOptionPane.showMessageDialog(frame, "Please select an account to remove");
+        }
+        else 
+        {
+            Admin admin = null;
+            for (int i=0; i<main.admins.size();i++)
+            {
+                if (main.admins.get(i).getUserId().equals(adminsTbl.getValueAt(selected, 0).toString()))
+                {
+                    admin = main.admins.get(i);
+                }
+            }
+            main.admins.remove(admin);
+            JFrame frame = new JFrame();
+            JOptionPane.showMessageDialog(frame, "Account has been removed");
+            this.dispose();
+            adminDashboard dash = new adminDashboard();
+            dash.setVisible(true);
+        }
     }//GEN-LAST:event_removeAdminBtnActionPerformed
 
     private void addSecretaryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSecretaryBtnActionPerformed
@@ -396,6 +442,29 @@ public class adminDashboard extends javax.swing.JFrame {
 
     private void removeSecretaryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeSecretaryBtnActionPerformed
         // TODO add your handling code here:
+        int selected = secretariesTbl.getSelectedRow();
+        if (selected == -1)
+        {
+            JFrame frame = new JFrame();
+            JOptionPane.showMessageDialog(frame, "Please select an account to remove");
+        }
+        else 
+        {
+            Secretary secretary = null;
+            for (int i=0; i<main.secretaries.size();i++)
+            {
+                if (main.secretaries.get(i).getUserId().equals(secretariesTbl.getValueAt(selected, 0).toString()))
+                {
+                    secretary = main.secretaries.get(i);
+                }
+            }
+            main.secretaries.remove(secretary);
+            JFrame frame = new JFrame();
+            JOptionPane.showMessageDialog(frame, "Account has been removed");
+            this.dispose();
+            adminDashboard dash = new adminDashboard();
+            dash.setVisible(true);
+        }
     }//GEN-LAST:event_removeSecretaryBtnActionPerformed
 
     /**
