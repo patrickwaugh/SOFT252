@@ -12,7 +12,7 @@ import java.util.*;
 
 /**
  *
- * @author User
+ * @author patrick
  */
 public class patientPrescriptions extends javax.swing.JFrame {
 
