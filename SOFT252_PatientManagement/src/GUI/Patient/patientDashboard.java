@@ -108,8 +108,9 @@ public class patientDashboard extends javax.swing.JFrame {
 
     private void appoitmentsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appoitmentsBtnActionPerformed
         // TODO add your handling code here:
-       
-        
+        patientAppointments dash = new patientAppointments();
+        dash.setVisible(true);
+        this.dispose();     
     }//GEN-LAST:event_appoitmentsBtnActionPerformed
 
     private void prescriptionsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prescriptionsBtnActionPerformed
