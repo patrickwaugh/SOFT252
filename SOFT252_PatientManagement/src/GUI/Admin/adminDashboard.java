@@ -360,9 +360,9 @@ public class adminDashboard extends javax.swing.JFrame {
 
     private void ratingsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ratingsBtnActionPerformed
         // TODO add your handling code here:
-        //this.dispose();
-        //doctorFeedback feedback = new doctorFeedback();
-        //feedback.setVisible(true);
+        doctorFeedback dash = new doctorFeedback();
+        dash.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_ratingsBtnActionPerformed
 
     private void addDoctorBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDoctorBtnActionPerformed

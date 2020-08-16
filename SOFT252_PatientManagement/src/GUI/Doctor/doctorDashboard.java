@@ -119,6 +119,11 @@ public class doctorDashboard extends javax.swing.JFrame {
         });
 
         FeedbackBtn.setText("Review Feedback");
+        FeedbackBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FeedbackBtnActionPerformed(evt);
+            }
+        });
 
         startApptBtn.setText("Start Appointment");
         startApptBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -198,6 +203,13 @@ public class doctorDashboard extends javax.swing.JFrame {
         orderMeds.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_orderBtnActionPerformed
+
+    private void FeedbackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FeedbackBtnActionPerformed
+        // TODO add your handling code here:
+        doctorFeedback dash = new doctorFeedback();
+        dash.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_FeedbackBtnActionPerformed
 
     /**
      * @param args the command line arguments

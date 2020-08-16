@@ -55,6 +55,9 @@ public class main {
         
         List<Appointment> appointmentsList = ReadData.returnAppointments();
         appointments = appointmentsList;
+        
+        List<Feedback> feedbackList = ReadData.returnFeedback();
+        feedback = feedbackList;
     
     }
     public static Person currentUser;
