@@ -43,7 +43,7 @@ public class LoginScreen extends javax.swing.JFrame {
         userIdBox = new javax.swing.JTextField();
         btnSubmit = new javax.swing.JButton();
         passwordBox = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        requestBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,7 +64,12 @@ public class LoginScreen extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Request Account");
+        requestBtn.setText("Request Account");
+        requestBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                requestBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,7 +78,7 @@ public class LoginScreen extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(2, 2, 2)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
+                    .addComponent(requestBtn)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -99,7 +104,7 @@ public class LoginScreen extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnSubmit)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(requestBtn)
                 .addContainerGap())
         );
 
@@ -250,7 +255,23 @@ public class LoginScreen extends javax.swing.JFrame {
             }
         }
         
+        
     }
+    
+    
+    
+    private void requestBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestBtnActionPerformed
+        // TODO add your handling code here:
+        RequestAccount dash = new RequestAccount();
+        dash.setVisible(true);
+        this.setVisible(false);
+        
+        
+        
+    }//GEN-LAST:event_requestBtnActionPerformed
+    
+        
+    
 
     /**
      * @param args the command line arguments
@@ -259,10 +280,10 @@ public class LoginScreen extends javax.swing.JFrame {
         
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSubmit;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPasswordField passwordBox;
+    private javax.swing.JButton requestBtn;
     private javax.swing.JTextField userIdBox;
     // End of variables declaration//GEN-END:variables
 }
