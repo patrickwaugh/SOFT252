@@ -187,12 +187,16 @@ public class doctorDashboard extends javax.swing.JFrame {
 
     private void prescriptionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prescriptionBtnActionPerformed
         // TODO add your handling code here:
-
+        doctorPrescription pres = new doctorPrescription();
+        pres.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_prescriptionBtnActionPerformed
 
     private void orderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderBtnActionPerformed
         // TODO add your handling code here:
-
+        doctorOrderMedicine orderMeds = new doctorOrderMedicine();
+        orderMeds.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_orderBtnActionPerformed
 
     /**

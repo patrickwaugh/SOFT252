@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import System.main;
 import Objects.AppointmentNotes;
 import Users.*;
+import java.lang.*;
 
 /**
  *
@@ -135,7 +136,7 @@ public class doctorAppointmentNotes extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(frame, "Please Select a patient");
         }
         else{           
-           String apptNotesId = String.valueOf(main.appointmentNotes.size() + 1);
+           int apptNotesId = main.appointmentNotes.size() + 1;
            
            
            Patient patient = null;
@@ -156,7 +157,7 @@ public class doctorAppointmentNotes extends javax.swing.JFrame {
                }              
            }
            
-           AppointmentNotes newApptNotes = new AppointmentNotes(apptNotesId, patient, doctor, notesBox.getText(), dateBox.getText());
+           AppointmentNotes newApptNotes = new AppointmentNotes(String.valueOf(apptNotesId), patient, doctor, notesBox.getText(), dateBox.getText());
            main.appointmentNotes.add(newApptNotes);
            JFrame frame = new JFrame();
            JOptionPane.showMessageDialog(frame, "Consultation saved");
