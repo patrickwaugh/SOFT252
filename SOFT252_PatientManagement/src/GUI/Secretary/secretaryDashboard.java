@@ -397,7 +397,7 @@ public class secretaryDashboard extends javax.swing.JFrame {
         for (int j =0; j<appRequests.size(); j++)
         {
             apptRequestTbl.setValueAt(appRequests.get(j).getAppointmentId(), j, 0);
-            apptRequestTbl.setValueAt(appRequests.get(j).getPatient(), j, 1);
+            apptRequestTbl.setValueAt(appRequests.get(j).getPatient().getName(), j, 1);
             apptRequestTbl.setValueAt(appRequests.get(j).getDoctor(), j, 2);
             apptRequestTbl.setValueAt(appRequests.get(j).getDate(), j, 3);
         }

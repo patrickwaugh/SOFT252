@@ -124,10 +124,7 @@ public class adminDashboard extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jScrollPane5 = new javax.swing.JScrollPane();
         usersTbl2 = new javax.swing.JTable();
-        addPatientBtn = new javax.swing.JButton();
-        removePatientBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        createAdminBtn = new javax.swing.JButton();
         ratingsBtn = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         patientsTbl = new javax.swing.JTable();
@@ -175,28 +172,7 @@ public class adminDashboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        addPatientBtn.setText("Add");
-        addPatientBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addPatientBtnActionPerformed(evt);
-            }
-        });
-
-        removePatientBtn.setText("Remove");
-        removePatientBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                removePatientBtnActionPerformed(evt);
-            }
-        });
-
         jLabel1.setText("Patients");
-
-        createAdminBtn.setText("Create Admin");
-        createAdminBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createAdminBtnActionPerformed(evt);
-            }
-        });
 
         ratingsBtn.setText("View Doctor Ratings");
         ratingsBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -327,10 +303,6 @@ public class adminDashboard extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(addPatientBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(removePatientBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
                                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -342,9 +314,7 @@ public class adminDashboard extends javax.swing.JFrame {
                                 .addComponent(jLabel4))
                             .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ratingsBtn)
-                    .addComponent(createAdminBtn))
+                .addComponent(ratingsBtn)
                 .addGap(0, 10, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -354,13 +324,9 @@ public class adminDashboard extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addPatientBtn)
-                    .addComponent(removePatientBtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 20, Short.MAX_VALUE)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -375,36 +341,22 @@ public class adminDashboard extends javax.swing.JFrame {
                     .addComponent(addAdminBtn)
                     .addComponent(removeAdminBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addGap(9, 9, 9)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(createAdminBtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addSecretaryBtn)
-                    .addComponent(removeSecretaryBtn)
-                    .addComponent(ratingsBtn))
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(9, 9, 9)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(removeSecretaryBtn)
+                            .addComponent(addSecretaryBtn)
+                            .addComponent(ratingsBtn))
+                        .addContainerGap())))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void addPatientBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPatientBtnActionPerformed
-        // TODO add your handling code here
-        //add page that has all text feilds. Combobox for pretext?
-        //adminCreateAccount createAccount = new adminCreateAccount();
-        //createAccount.setVisible(true);
-        //this.dispose();
-    }//GEN-LAST:event_addPatientBtnActionPerformed
-
-    private void createAdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAdminBtnActionPerformed
-        // TODO add your handling code here:
-        //adminCreateAdmin createAdmin = new adminCreateAdmin();
-        //this.dispose();
-        //createAdmin.setVisible(true);
-    }//GEN-LAST:event_createAdminBtnActionPerformed
 
     private void ratingsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ratingsBtnActionPerformed
         // TODO add your handling code here:
@@ -413,15 +365,11 @@ public class adminDashboard extends javax.swing.JFrame {
         //feedback.setVisible(true);
     }//GEN-LAST:event_ratingsBtnActionPerformed
 
-    private void removePatientBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removePatientBtnActionPerformed
-        // TODO add your handling code here:
-        //get table selected index 
-        
-        
-    }//GEN-LAST:event_removePatientBtnActionPerformed
-
     private void addDoctorBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDoctorBtnActionPerformed
         // TODO add your handling code here:
+        adminCreateAccount createAccount = new adminCreateAccount();
+        createAccount.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_addDoctorBtnActionPerformed
 
     private void removeDoctorBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeDoctorBtnActionPerformed
@@ -430,6 +378,9 @@ public class adminDashboard extends javax.swing.JFrame {
 
     private void addAdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAdminBtnActionPerformed
         // TODO add your handling code here:
+        adminCreateAdmin createAdmin = new adminCreateAdmin();
+        this.dispose();
+        createAdmin.setVisible(true);
     }//GEN-LAST:event_addAdminBtnActionPerformed
 
     private void removeAdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeAdminBtnActionPerformed
@@ -438,6 +389,9 @@ public class adminDashboard extends javax.swing.JFrame {
 
     private void addSecretaryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSecretaryBtnActionPerformed
         // TODO add your handling code here:
+        adminCreateAccount createAccount = new adminCreateAccount();
+        createAccount.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_addSecretaryBtnActionPerformed
 
     private void removeSecretaryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeSecretaryBtnActionPerformed
@@ -486,10 +440,8 @@ public class adminDashboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addAdminBtn;
     private javax.swing.JButton addDoctorBtn;
-    private javax.swing.JButton addPatientBtn;
     private javax.swing.JButton addSecretaryBtn;
     private javax.swing.JTable adminsTbl;
-    private javax.swing.JButton createAdminBtn;
     private javax.swing.JTable doctorsTbl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -506,7 +458,6 @@ public class adminDashboard extends javax.swing.JFrame {
     private javax.swing.JButton ratingsBtn;
     private javax.swing.JButton removeAdminBtn;
     private javax.swing.JButton removeDoctorBtn;
-    private javax.swing.JButton removePatientBtn;
     private javax.swing.JButton removeSecretaryBtn;
     private javax.swing.JTable secretariesTbl;
     private javax.swing.JTable usersTbl2;
