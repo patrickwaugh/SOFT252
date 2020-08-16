@@ -17,6 +17,7 @@ public class Feedback {
     protected int rating;
 
     public Feedback(String feedbackId, Patient patient, Doctor doctor, String feedback, int rating) {
+        this.feedbackId = feedbackId;
         this.patient = patient;
         this.doctor = doctor;
         this.feedback = feedback;

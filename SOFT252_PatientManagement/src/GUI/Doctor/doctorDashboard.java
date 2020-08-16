@@ -6,7 +6,7 @@
 package GUI.Doctor;
 
 import javax.swing.table.DefaultTableModel;
-import System.main;
+import System.*;
 import Objects.*;
 import java.util.*;
 import Users.Doctor;
@@ -62,7 +62,7 @@ public class doctorDashboard extends javax.swing.JFrame {
         orderBtn = new javax.swing.JButton();
         appointmentBtn = new javax.swing.JButton();
         prescriptionBtn = new javax.swing.JButton();
-        searchBtn = new javax.swing.JButton();
+        FeedbackBtn = new javax.swing.JButton();
         startApptBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -118,7 +118,7 @@ public class doctorDashboard extends javax.swing.JFrame {
             }
         });
 
-        searchBtn.setText("Search Patients");
+        FeedbackBtn.setText("Review Feedback");
 
         startApptBtn.setText("Start Appointment");
         startApptBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +143,7 @@ public class doctorDashboard extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(prescriptionBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(searchBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(FeedbackBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(appointmentBtn))
                         .addComponent(titleLbl)))
@@ -164,7 +164,7 @@ public class doctorDashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(startApptBtn)
-                    .addComponent(searchBtn))
+                    .addComponent(FeedbackBtn))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -235,12 +235,12 @@ public class doctorDashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton FeedbackBtn;
     private javax.swing.JButton appointmentBtn;
     private javax.swing.JTable appointmentsTbl;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton orderBtn;
     private javax.swing.JButton prescriptionBtn;
-    private javax.swing.JButton searchBtn;
     private javax.swing.JButton startApptBtn;
     private javax.swing.JLabel titleLbl;
     // End of variables declaration//GEN-END:variables

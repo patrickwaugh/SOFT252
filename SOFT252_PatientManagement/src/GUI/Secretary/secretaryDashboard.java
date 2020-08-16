@@ -361,9 +361,10 @@ public class secretaryDashboard extends javax.swing.JFrame {
         
         for (int i = 0; i<main.patients.size(); i++)
         {
-            if (main.patients.get(i).equals(id))
+            if (main.patients.get(i).getUserId().equals(id))
             {
-                main.patients.remove(i);
+                Patient patient = main.patients.get(i);
+                main.patients.remove(patient);
             }
             
         }
@@ -373,6 +374,13 @@ public class secretaryDashboard extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public void refresh(){
+        loadAppointments();
+        loadAccountRequests();
+        loadMedicineOrders();
+        loadPatients();
+        
+        
+        
         this.dispose();
         secretaryDashboard dash = new secretaryDashboard();
         dash.setVisible(true);
@@ -398,7 +406,7 @@ public class secretaryDashboard extends javax.swing.JFrame {
         {
             apptRequestTbl.setValueAt(appRequests.get(j).getAppointmentId(), j, 0);
             apptRequestTbl.setValueAt(appRequests.get(j).getPatient().getName(), j, 1);
-            apptRequestTbl.setValueAt(appRequests.get(j).getDoctor(), j, 2);
+            apptRequestTbl.setValueAt(appRequests.get(j).getDoctor().getName(), j, 2);
             apptRequestTbl.setValueAt(appRequests.get(j).getDate(), j, 3);
         }
         appointmentRequests = appRequests;

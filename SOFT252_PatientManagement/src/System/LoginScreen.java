@@ -262,7 +262,7 @@ public class LoginScreen extends javax.swing.JFrame {
     
     private void requestBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestBtnActionPerformed
         // TODO add your handling code here:
-        RequestAccount dash = new RequestAccount();
+        requestAccount dash = new requestAccount();
         dash.setVisible(true);
         this.setVisible(false);
         

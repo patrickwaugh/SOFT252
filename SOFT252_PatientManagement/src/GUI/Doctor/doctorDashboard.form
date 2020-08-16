@@ -36,7 +36,7 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="prescriptionBtn" max="32767" attributes="0"/>
-                              <Component id="searchBtn" max="32767" attributes="0"/>
+                              <Component id="FeedbackBtn" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="appointmentBtn" min="-2" max="-2" attributes="0"/>
@@ -64,7 +64,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="startApptBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="searchBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="FeedbackBtn" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -143,9 +143,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="prescriptionBtnActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="searchBtn">
+    <Component class="javax.swing.JButton" name="FeedbackBtn">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Search Patients"/>
+        <Property name="text" type="java.lang.String" value="Review Feedback"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="startApptBtn">
