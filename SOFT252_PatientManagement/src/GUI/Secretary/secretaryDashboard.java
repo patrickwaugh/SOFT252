@@ -32,6 +32,7 @@ public class secretaryDashboard extends javax.swing.JFrame {
         loadAccountRequests();
         loadMedicineOrders();
         loadPatients();
+        loadDeletionRequests();
         
         
         
@@ -63,6 +64,10 @@ public class secretaryDashboard extends javax.swing.JFrame {
         accountsTbl = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         accountRemoveBtn = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        deleteTbl = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
+        deleteBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,9 +82,16 @@ public class secretaryDashboard extends javax.swing.JFrame {
                 "Appt ID", "Patient", "Doctor", "Date"
             }
         ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
             boolean[] canEdit = new boolean [] {
                 true, false, true, true
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -111,9 +123,17 @@ public class secretaryDashboard extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Username", "Name", "Sex", "Age", "Address"
+                "User ID", "Name", "Sex", "Age", "Address"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(accountReqTbl);
 
         accountRequestBtn.setText("Approve");
@@ -135,7 +155,15 @@ public class secretaryDashboard extends javax.swing.JFrame {
             new String [] {
                 "Med ID", "Name"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane3.setViewportView(medsTbl);
         if (medsTbl.getColumnModel().getColumnCount() > 0) {
             medsTbl.getColumnModel().getColumn(0).setResizable(false);
@@ -159,9 +187,17 @@ public class secretaryDashboard extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Username", "Name", "Address"
+                "User ID", "Name", "Address"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane4.setViewportView(accountsTbl);
 
         jLabel4.setText("Patient Accounts");
@@ -170,6 +206,36 @@ public class secretaryDashboard extends javax.swing.JFrame {
         accountRemoveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 accountRemoveBtnActionPerformed(evt);
+            }
+        });
+
+        deleteTbl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "User ID", "Name", "Address"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane5.setViewportView(deleteTbl);
+
+        jLabel5.setText("Patient Deletion Requests");
+
+        deleteBtn.setText("Remove");
+        deleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBtnActionPerformed(evt);
             }
         });
 
@@ -193,26 +259,23 @@ public class secretaryDashboard extends javax.swing.JFrame {
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2)
                             .addComponent(accountRequestBtn))
-                        .addContainerGap(20, Short.MAX_VALUE))
+                        .addContainerGap(191, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(45, 45, 45))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(orderMedsBtn, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(478, 478, 478))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(accountRemoveBtn))
-                                .addContainerGap())))))
+                            .addComponent(orderMedsBtn)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)
+                            .addComponent(accountRemoveBtn))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(deleteBtn)
+                            .addComponent(jLabel5)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -230,18 +293,21 @@ public class secretaryDashboard extends javax.swing.JFrame {
                     .addComponent(apptDenyBtn)
                     .addComponent(accountRequestBtn)
                     .addComponent(apptRequestBtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(orderMedsBtn)
-                    .addComponent(accountRemoveBtn)))
+                    .addComponent(accountRemoveBtn)
+                    .addComponent(deleteBtn)))
         );
 
         pack();
@@ -357,6 +423,30 @@ public class secretaryDashboard extends javax.swing.JFrame {
             dash.setVisible(true);
         }
     }//GEN-LAST:event_accountRemoveBtnActionPerformed
+
+    private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
+        // TODO add your handling code here:
+        int selected = deleteTbl.getSelectedRow();
+        if (selected == -1)
+        {
+            JFrame frame = new JFrame();
+            JOptionPane.showMessageDialog(frame, "Please select an account to remove");
+        }
+        else {
+            String selectedUser = deleteTbl.getValueAt(selected, 0).toString();
+            
+            removeUser(selectedUser);
+            
+            JFrame frame = new JFrame();
+            JOptionPane.showMessageDialog(frame, "Account has been removed");
+            this.dispose();
+            secretaryDashboard dash = new secretaryDashboard();
+            dash.setVisible(true);
+        }
+        
+        
+        
+    }//GEN-LAST:event_deleteBtnActionPerformed
     public static void removeUser(String id){
         
         for (int i = 0; i<main.patients.size(); i++)
@@ -378,6 +468,7 @@ public class secretaryDashboard extends javax.swing.JFrame {
         loadAccountRequests();
         loadMedicineOrders();
         loadPatients();
+        loadDeletionRequests();
         
         
         
@@ -409,7 +500,6 @@ public class secretaryDashboard extends javax.swing.JFrame {
             apptRequestTbl.setValueAt(appRequests.get(j).getDoctor().getName(), j, 2);
             apptRequestTbl.setValueAt(appRequests.get(j).getDate(), j, 3);
         }
-        appointmentRequests = appRequests;
     }
     
     public void loadAccountRequests(){
@@ -439,6 +529,32 @@ public class secretaryDashboard extends javax.swing.JFrame {
         }
         patientRequests = accountRequests;
     }
+    
+    public void loadDeletionRequests(){
+        List<Patient> deleteRequests = new ArrayList();
+        for (int i = 0; i< main.patients.size(); i++)
+        {
+          
+            if (main.patients.get(i).getActive().equals("delete"))
+            {
+                
+                 deleteRequests.add(main.patients.get(i));
+            }
+            
+        }
+        DefaultTableModel model = new DefaultTableModel();
+        model = (DefaultTableModel) deleteTbl.getModel();
+        model.setRowCount(0);
+        model.setRowCount(deleteRequests.size());
+        deleteTbl.setModel(model);
+        for (int j =0; j<deleteRequests.size(); j++)
+        {
+            deleteTbl.setValueAt(deleteRequests.get(j).getUserId(), j, 0);
+            deleteTbl.setValueAt(deleteRequests.get(j).getName(), j, 1);
+            deleteTbl.setValueAt(deleteRequests.get(j).getAddress(), j, 2);   
+        }
+    }
+    
     
     public void loadMedicineOrders(){
         List<Medicine> orderMeds = new ArrayList();
@@ -516,14 +632,18 @@ public class secretaryDashboard extends javax.swing.JFrame {
     private javax.swing.JButton apptDenyBtn;
     private javax.swing.JButton apptRequestBtn;
     private javax.swing.JTable apptRequestTbl;
+    private javax.swing.JButton deleteBtn;
+    private javax.swing.JTable deleteTbl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTable medsTbl;
     private javax.swing.JButton orderMedsBtn;
     // End of variables declaration//GEN-END:variables

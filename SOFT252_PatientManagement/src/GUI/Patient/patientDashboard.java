@@ -61,6 +61,11 @@ public class patientDashboard extends javax.swing.JFrame {
         });
 
         deleteBtn.setText("Delete Account");
+        deleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBtnActionPerformed(evt);
+            }
+        });
 
         nameLbl.setText("jLabel1");
 
@@ -122,6 +127,12 @@ public class patientDashboard extends javax.swing.JFrame {
         this.dispose(); 
 
     }//GEN-LAST:event_prescriptionsBtnActionPerformed
+
+    private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
+        patientDelete dash = new patientDelete();
+        dash.setVisible(true);
+        this.dispose(); 
+    }//GEN-LAST:event_deleteBtnActionPerformed
 
     /**
      * @param args the command line arguments

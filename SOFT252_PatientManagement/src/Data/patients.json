@@ -31,6 +31,16 @@
 
 		},
                 {
+			"userId": "P0005",
+			"password": "p0005",
+			"name": "Blixa Bargeld",
+			"address": "Robbins Hall of Residence, Gibbon Street, Plymouth, PL4 8PR",
+                        "gender": "Male",
+                        "age": 41,
+                        "active": "delete"
+
+		},
+                {
 			"userId": "P0003",
 			"password": "p0003",
 			"name": "Joni Mitchell",
