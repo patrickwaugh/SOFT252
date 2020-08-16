@@ -179,6 +179,10 @@ public class doctorPrescription extends javax.swing.JFrame {
         
         Prescription newPrescription = new Prescription(String.valueOf(main.prescriptions.size() + 1), doctor, patient, main.medicines.get(medicineDropDown.getSelectedIndex()),quantity, dosageBox.getText());
         main.prescriptions.add(newPrescription);
+        
+        this.dispose();
+        doctorDashboard dash = new doctorDashboard();
+        dash.setVisible(true);
     }//GEN-LAST:event_saveBtnActionPerformed
 
     /**

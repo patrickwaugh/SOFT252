@@ -13,30 +13,30 @@ import Users.Patient;
 public class Feedback {
     protected Patient patient;
     protected Doctor doctor;
-    protected String userId, name, feedback;
+    protected String feedbackId, feedback;
     protected int rating;
 
-    public Feedback(Patient patient, Doctor doctor, String name, String feedback, int rating) {
+    public Feedback(String feedbackId, Patient patient, Doctor doctor, String feedback, int rating) {
         this.patient = patient;
         this.doctor = doctor;
         this.feedback = feedback;
         this.rating = rating;
     }
 
+    public String getFeedbackId() {
+        return feedbackId;
+    }
+
+    public void setFeedbackId(String feedbackId) {
+        this.feedbackId = feedbackId;
+    }
+    
     public Patient getPatient() {
         return patient;
     }
 
     public void setPatient(Patient patient) {
         this.patient = patient;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getFeedback() {

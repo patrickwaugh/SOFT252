@@ -499,4 +499,73 @@ public class ReadData {
         return appointmentNotesList;
         }
         
+        
+        
+        
+        
+        public static List<Feedback> returnFeedback()
+        { 
+        List<Feedback> feedbackList = new ArrayList<>();
+        
+        JSONParser parser = new JSONParser();      
+         
+        try (Reader reader = new FileReader("src\\Data\\feedback.json"))
+        {
+           JSONObject jsonObject = (JSONObject) parser.parse(reader); //Parse the JSON object
+           
+            JSONArray feedbacks = (JSONArray) jsonObject.get("feedbacks");
+            
+            for (int i = 0; i < feedbacks.size(); i++) {
+                JSONObject currentFeedback = (JSONObject) feedbacks.get(i);
+                
+                String feedbackId = currentFeedback.get("feedbackId").toString();
+                
+                String patientId = (currentFeedback.get("patient").toString());
+                
+                Patient patient = null;
+                for (int x = 0; x < main.patients.size(); x++)
+                {
+                    if (main.patients.get(x).getUserId().equals(patientId))
+                    {
+                        patient = main.patients.get(x);
+                    }     
+                }
+                
+                String doctorId = (currentFeedback.get("doctor").toString());
+                
+                Doctor doctor = null;
+                
+                for (int x = 0; x < main.doctors.size(); x++)
+                {
+                    if (main.doctors.get(x).getUserId().equals(doctorId))
+                    {
+                        doctor = main.doctors.get(x);
+                    }     
+                }
+                
+                String feedback = currentFeedback.get("feedback").toString();
+                
+                int rating = Integer.valueOf(currentFeedback.get("rating").toString());
+                
+                
+                feedbackList.add(new Feedback(feedbackId, patient, doctor, feedback, rating));
+            }
+           
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        catch (ParseException e)
+        {
+            e.printStackTrace();
+        }
+        
+        return feedbackList;
+        }
+        
 }

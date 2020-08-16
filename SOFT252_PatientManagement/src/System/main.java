@@ -66,6 +66,7 @@ public class main {
     public static List<Medicine> medicines;
     public static List<Prescription> prescriptions;
     public static List<AppointmentNotes> appointmentNotes;
+    public static List<Feedback> feedback;
    
     
 
