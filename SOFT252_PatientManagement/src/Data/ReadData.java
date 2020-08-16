@@ -432,4 +432,71 @@ public class ReadData {
         return prescriptionList;
         }
         
+        
+        
+        public static List<AppointmentNotes> returnAppointmentNotes()
+        { 
+        List<AppointmentNotes> appointmentNotesList = new ArrayList<>();
+        
+        JSONParser parser = new JSONParser();      
+         
+        try (Reader reader = new FileReader("src\\Data\\appointmentNotes.json"))
+        {
+           JSONObject jsonObject = (JSONObject) parser.parse(reader); //Parse the JSON object
+           
+            JSONArray appointmentNotes = (JSONArray) jsonObject.get("appointmentNotes");
+            
+            for (int i = 0; i < appointmentNotes.size(); i++) {
+                JSONObject currentAppointment = (JSONObject) appointmentNotes.get(i);
+                
+                String noteId = currentAppointment.get("noteId").toString();
+                
+                String patientId = (currentAppointment.get("patient").toString());
+                
+                Patient patient = null;
+                for (int x = 0; x < main.patients.size(); x++)
+                {
+                    if (main.patients.get(x).getUserId().equals(patientId))
+                    {
+                        patient = main.patients.get(x);
+                    }     
+                }
+                
+                String doctorId = (currentAppointment.get("doctor").toString());
+                
+                Doctor doctor = null;
+                
+                for (int x = 0; x < main.doctors.size(); x++)
+                {
+                    if (main.doctors.get(x).getUserId().equals(doctorId))
+                    {
+                        doctor = main.doctors.get(x);
+                    }     
+                }
+                
+                String notes = currentAppointment.get("notes").toString();
+                
+                String date = currentAppointment.get("date").toString();
+                
+                
+                appointmentNotesList.add(new AppointmentNotes(noteId, patient, doctor, notes, date));
+            }
+           
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        catch (ParseException e)
+        {
+            e.printStackTrace();
+        }
+        
+        return appointmentNotesList;
+        }
+        
 }

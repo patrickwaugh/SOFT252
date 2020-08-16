@@ -23,15 +23,13 @@ public class doctorDashboard extends javax.swing.JFrame {
     public doctorDashboard() {
         initComponents();
         
-        List<Appointment> appointments = main.appointments;
 
         List<Appointment> tableAppointments = new ArrayList();
-        for (int i = 0; i< appointments.size(); i++)
-        {
-            Doctor d = appointments.get(i).getDoctor();
-            if (d.getUserId().equals(main.currentUser.getUserId()))
+        for (int i = 0; i< main.appointments.size(); i++)
+        {            
+            if (main.appointments.get(i).getDoctor() == main.currentUser)
             {
-                tableAppointments.add(appointments.get(i));
+                tableAppointments.add(main.appointments.get(i));
             }
         }
         DefaultTableModel model = new DefaultTableModel();
@@ -46,16 +44,7 @@ public class doctorDashboard extends javax.swing.JFrame {
             appointmentsTbl.setValueAt(tableAppointments.get(j).getDate(), j, 2);
         }
     }
-    public static List<Appointment> addAppointment(List<Appointment> appointments, Appointment newAppointment){
-        List<Appointment> newAppointments = new ArrayList(appointments.size() + 1);
-        for (int i =0; i< appointments.size(); i++)
-        {
-            newAppointments.add(appointments.get(i));
-        }
-        
-        //newAppointments[oldAppointments.length] = newAppointment;
-        return newAppointments;
-    }
+    
     
 
     /**
@@ -184,12 +173,16 @@ public class doctorDashboard extends javax.swing.JFrame {
 
     private void appointmentBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appointmentBtnActionPerformed
         // TODO add your handling code here:
-
+        doctorAppointment appt = new doctorAppointment();
+        appt.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_appointmentBtnActionPerformed
 
     private void startApptBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startApptBtnActionPerformed
         // TODO add your handling code here:
-
+        doctorAppointmentNotes apptNotes = new doctorAppointmentNotes();
+        apptNotes.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_startApptBtnActionPerformed
 
     private void prescriptionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prescriptionBtnActionPerformed
