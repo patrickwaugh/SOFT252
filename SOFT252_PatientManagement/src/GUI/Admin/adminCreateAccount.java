@@ -8,6 +8,7 @@ import System.main;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import Users.*;
+import Data.*;
 /**
  *
  * @author patrick
@@ -171,8 +172,19 @@ public class adminCreateAccount extends javax.swing.JFrame {
                     }
                     else
                     {
+                        String id = null;
+                        if ((main.secretaries.size() + 1) > 9)
+                        {
+                        id = "S00" + String.valueOf(main.secretaries.size() + 1);
+            
+                        }
+                        else
+                        {
+                        id = "S000" + String.valueOf(main.secretaries.size() + 1);
+                        }
+                        
                         JFrame frame = new JFrame();
-                        Secretary newSecretary = new Secretary(userId, name, address, password);
+                        Secretary newSecretary = new Secretary(id, name, address, password);
                         main.secretaries.add(newSecretary);
                         JOptionPane.showMessageDialog(frame, "The new user has been created.");
                         clearBoxes();
@@ -195,8 +207,19 @@ public class adminCreateAccount extends javax.swing.JFrame {
                     }
                     else
                     {
+                        String id = null;
+                        if ((main.doctors.size() + 1) > 9)
+                        {
+                        id = "D00" + String.valueOf(main.doctors.size() + 1);
+            
+                        }
+                        else
+                        {
+                        id = "D000" + String.valueOf(main.doctors.size() + 1);
+                        }
+                        
                         JFrame frame = new JFrame();
-                        Doctor newDoctor = new Doctor(userId, name, address, password);
+                        Doctor newDoctor = new Doctor(id, name, address, password);
                         main.doctors.add(newDoctor);
                         JOptionPane.showMessageDialog(frame, "The new user has been created.");
                         clearBoxes();
@@ -220,9 +243,14 @@ public class adminCreateAccount extends javax.swing.JFrame {
         
         
     }
+    public static void save()
+    {
+        WriteData.saveAll();
+    }
     
     public void exit()
     {
+        save();
         this.dispose();
         adminDashboard dash = new adminDashboard();
         dash.setVisible(true);    

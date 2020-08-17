@@ -143,6 +143,7 @@ public class adminDashboard extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        logOffBtn = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -281,6 +282,13 @@ public class adminDashboard extends javax.swing.JFrame {
 
         jLabel4.setText("Doctors");
 
+        logOffBtn.setText("Log Off");
+        logOffBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logOffBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -314,7 +322,9 @@ public class adminDashboard extends javax.swing.JFrame {
                                 .addComponent(jLabel4))
                             .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ratingsBtn)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ratingsBtn)
+                    .addComponent(logOffBtn))
                 .addGap(0, 10, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -348,6 +358,8 @@ public class adminDashboard extends javax.swing.JFrame {
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(34, 34, 34))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(logOffBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(removeSecretaryBtn)
                             .addComponent(addSecretaryBtn)
@@ -467,6 +479,14 @@ public class adminDashboard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_removeSecretaryBtnActionPerformed
 
+    private void logOffBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOffBtnActionPerformed
+        // TODO add your handling code here:
+        main.currentUser = null;
+        this.dispose();
+        LoginScreen dash = new LoginScreen();
+        dash.setVisible(true);
+    }//GEN-LAST:event_logOffBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -523,6 +543,7 @@ public class adminDashboard extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton logOffBtn;
     private javax.swing.JTable patientsTbl;
     private javax.swing.JButton ratingsBtn;
     private javax.swing.JButton removeAdminBtn;

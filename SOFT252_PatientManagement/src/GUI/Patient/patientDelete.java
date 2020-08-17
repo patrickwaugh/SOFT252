@@ -6,6 +6,7 @@
 
 package GUI.Patient;
         
+import Data.WriteData;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import System.main;
@@ -105,7 +106,7 @@ public class patientDelete extends javax.swing.JFrame {
         
         patient.setActive("delete");
         
-        
+        save();
         patientDashboard dash = new patientDashboard();
         dash.setVisible(true);
         this.dispose(); 
@@ -117,7 +118,12 @@ public class patientDelete extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_yesBtnActionPerformed
-
+    
+    
+    public static void save()
+    {
+        WriteData.saveAll();
+    }
     /**
      * @param args the command line arguments
      */

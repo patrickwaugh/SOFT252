@@ -5,6 +5,7 @@
  */
 package GUI.Secretary;
 
+import Data.WriteData;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -332,6 +333,7 @@ public class secretaryDashboard extends javax.swing.JFrame {
                 }
             }
         }
+        save();
         refresh();
     }//GEN-LAST:event_apptRequestBtnActionPerformed
 
@@ -353,6 +355,7 @@ public class secretaryDashboard extends javax.swing.JFrame {
                 }
             }
         }
+        save();
         refresh();
     }//GEN-LAST:event_apptDenyBtnActionPerformed
 
@@ -376,6 +379,7 @@ public class secretaryDashboard extends javax.swing.JFrame {
                 }
             }
         }
+        save();
         refresh();
     }//GEN-LAST:event_accountRequestBtnActionPerformed
 
@@ -399,6 +403,7 @@ public class secretaryDashboard extends javax.swing.JFrame {
             }
         }
         refresh();
+        save();
     }//GEN-LAST:event_orderMedsBtnActionPerformed
 
     private void accountRemoveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accountRemoveBtnActionPerformed
@@ -416,6 +421,8 @@ public class secretaryDashboard extends javax.swing.JFrame {
             
             JFrame frame = new JFrame();
             JOptionPane.showMessageDialog(frame, "Account has been removed");
+            
+            save();
             this.dispose();
             secretaryDashboard dash = new secretaryDashboard();
             dash.setVisible(true);
@@ -437,6 +444,8 @@ public class secretaryDashboard extends javax.swing.JFrame {
             
             JFrame frame = new JFrame();
             JOptionPane.showMessageDialog(frame, "Account has been removed");
+            
+            save();
             this.dispose();
             secretaryDashboard dash = new secretaryDashboard();
             dash.setVisible(true);
@@ -456,7 +465,13 @@ public class secretaryDashboard extends javax.swing.JFrame {
             }
             
         }
+        save();
         
+    }
+    
+    public static void save()
+    {
+        WriteData.saveAll();
     }
     /**
      * @param args the command line arguments

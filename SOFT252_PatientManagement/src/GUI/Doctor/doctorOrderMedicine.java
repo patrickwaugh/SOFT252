@@ -6,6 +6,7 @@
 
 package GUI.Doctor;
 
+import Data.WriteData;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import System.main;
@@ -121,6 +122,7 @@ public class doctorOrderMedicine extends javax.swing.JFrame {
                 Medicine newMed = new Medicine(String.valueOf(main.medicines.size() + 1),medBox.getText(), true);                
                 main.medicines.add(newMed);
                 
+                save();
                 this.dispose();
                 doctorDashboard dash = new doctorDashboard();
                 dash.setVisible(true);
@@ -128,6 +130,10 @@ public class doctorOrderMedicine extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_orderBtnActionPerformed
 
+    public static void save()
+    {
+        WriteData.saveAll();
+    }
     /**
      * @param args the command line arguments
      */

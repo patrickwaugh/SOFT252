@@ -5,6 +5,7 @@
  */
 package GUI.Doctor;
 
+import Data.WriteData;
 import System.main;
 import Objects.Appointment;
 import Users.*;
@@ -158,12 +159,17 @@ public class doctorAppointment extends javax.swing.JFrame {
         newAppointment = new Appointment(appointmentId, patient, doctor, date, "Pending");
         main.appointments.add(newAppointment);
         
+        save();
         this.dispose();
         doctorDashboard dash = new doctorDashboard();
         dash.setVisible(true);
 
     }//GEN-LAST:event_submitBtnActionPerformed
 
+    public static void save()
+    {
+        WriteData.saveAll();
+    }
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
         doctorDashboard dash = new doctorDashboard();

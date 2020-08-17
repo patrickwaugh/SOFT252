@@ -5,6 +5,7 @@
  */
 package GUI.Doctor;
 
+import Data.WriteData;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import System.main;
@@ -164,6 +165,7 @@ public class doctorAppointmentNotes extends javax.swing.JFrame {
            notesBox.setText("");
            dateBox.setText("");
            
+           save();
            doctorDashboard dash = new doctorDashboard();
            dash.setVisible(true);
            this.dispose();
@@ -171,6 +173,10 @@ public class doctorAppointmentNotes extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_saveBtnActionPerformed
 
+    public static void save()
+    {
+        WriteData.saveAll();
+    }
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
         doctorDashboard dash = new doctorDashboard();

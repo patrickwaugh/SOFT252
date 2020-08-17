@@ -9,6 +9,7 @@ import System.main;
 import Objects.Appointment;
 import Users.*;
 import java.lang.*;
+import Data.*;
 
 /**
  *
@@ -144,12 +145,18 @@ public class requestAppointment extends javax.swing.JFrame {
         newAppointment = new Appointment(String.valueOf(apptId), patient, doctor, date, "Pending");
         
         main.appointments.add(newAppointment);
+        
+        save();
         this.dispose();
         patientAppointments dash = new patientAppointments();
         dash.setVisible(true);
         
     }//GEN-LAST:event_submitBtnActionPerformed
 
+    public static void save()
+    {
+        WriteData.saveAll();
+    }
     /**
      * @param args the command line arguments
      */

@@ -5,6 +5,7 @@
  */
 package GUI.Doctor;
 
+import Data.WriteData;
 import System.main;
 import Objects.*;
 import Users.*;
@@ -179,12 +180,17 @@ public class doctorPrescription extends javax.swing.JFrame {
         
         Prescription newPrescription = new Prescription(String.valueOf(main.prescriptions.size() + 1), doctor, patient, main.medicines.get(medicineDropDown.getSelectedIndex()),quantity, dosageBox.getText());
         main.prescriptions.add(newPrescription);
-        
+       
+        save();
         this.dispose();
         doctorDashboard dash = new doctorDashboard();
         dash.setVisible(true);
     }//GEN-LAST:event_saveBtnActionPerformed
-
+    
+    public static void save()
+    {
+        WriteData.saveAll();
+    }
     /**
      * @param args the command line arguments
      */

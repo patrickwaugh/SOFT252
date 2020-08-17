@@ -7,16 +7,11 @@ package Data;
 
         
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-import java.util.*;
 import java.io.FileWriter;
-import java.io.Writer;
-import java.lang.Integer;
+
 
 import System.main;
 import Users.*;
@@ -28,10 +23,24 @@ import Objects.*;
  */
 public class WriteData {
     
+    public static void saveAll()
+    {
+        savePatients();
+        saveDoctors();
+        saveAdmins();
+        saveAppointmentNotes();
+        saveAppointments();
+        saveFeedback();
+        saveMedicine();
+        savePrescriptions();
+        saveSecretaries();
+        
+        
+    }
      public static void savePatients()
         { 
             JSONArray patientList = new JSONArray();
-
+            JSONObject temp = new JSONObject();
             for (int i=0; i<main.patients.size();i++)
             {
                 //First Employee
@@ -44,17 +53,19 @@ public class WriteData {
             patientDetails.put("age", main.patients.get(i).getAge());
             patientDetails.put("active", main.patients.get(i).getActive());
             
-            JSONObject patientObject = new JSONObject(); 
-            patientObject.put("patients", patientDetails);
             
             
-            patientList.add(patientObject);
+            
+            
+            patientList.add(patientDetails);
+            
             }
             
+            temp.put("patients", patientList);
             //Write JSON file
             try (FileWriter file = new FileWriter("src\\Data\\patients.json")) {
  
-                file.write(patientList.toJSONString());
+                file.write(temp.toJSONString());
                 file.flush();
  
             } catch (IOException e) 
@@ -67,6 +78,7 @@ public class WriteData {
     public static void saveDoctors()
         { 
             JSONArray doctorList = new JSONArray();
+            JSONObject temp = new JSONObject();
 
             for (int i=0; i<main.doctors.size();i++)
             {
@@ -78,17 +90,17 @@ public class WriteData {
             doctorDetails.put("address", main.doctors.get(i).getAddress());
             
             
-            JSONObject doctorObject = new JSONObject(); 
-            doctorObject.put("doctors", doctorDetails);
+            ;
             
             
-            doctorList.add(doctorObject);
+            doctorList.add(doctorDetails);
             }
             
+            temp.put("doctors", doctorList);
             //Write JSON file
             try (FileWriter file = new FileWriter("src\\Data\\doctors.json")) {
  
-                file.write(doctorList.toJSONString());
+                file.write(temp.toJSONString());
                 file.flush();
  
             } catch (IOException e) 
@@ -102,7 +114,7 @@ public class WriteData {
     public static void saveAdmins()
         { 
             JSONArray adminList = new JSONArray();
-
+            JSONObject temp = new JSONObject();
             for (int i=0; i<main.admins.size();i++)
             {
                 //First Employee
@@ -113,17 +125,16 @@ public class WriteData {
             adminDetails.put("address", main.admins.get(i).getAddress());
             
             
-            JSONObject adminObject = new JSONObject(); 
-            adminObject.put("admins", adminDetails);
             
             
-            adminList.add(adminObject);
+            
+            adminList.add(adminDetails);
             }
-            
+            temp.put("admins", adminList);
             //Write JSON file
             try (FileWriter file = new FileWriter("src\\Data\\admins.json")) {
  
-                file.write(adminList.toJSONString());
+                file.write(temp.toJSONString());
                 file.flush();
  
             } catch (IOException e) 
@@ -137,7 +148,7 @@ public class WriteData {
     public static void saveSecretaries()
         { 
             JSONArray secretaryList = new JSONArray();
-
+            JSONObject temp = new JSONObject();
             for (int i=0; i<main.secretaries.size();i++)
             {
                 //First Employee
@@ -148,17 +159,16 @@ public class WriteData {
             secretaryDetails.put("address", main.secretaries.get(i).getAddress());
             
             
-            JSONObject secretaryObject = new JSONObject(); 
-            secretaryObject.put("secretaries", secretaryDetails);
             
             
-            secretaryList.add(secretaryObject);
+            
+            secretaryList.add(secretaryDetails);
             }
-            
+            temp.put("secretaries", secretaryList);
             //Write JSON file
             try (FileWriter file = new FileWriter("src\\Data\\secretaries.json")) {
  
-                file.write(secretaryList.toJSONString());
+                file.write(temp.toJSONString());
                 file.flush();
  
             } catch (IOException e) 
@@ -173,7 +183,7 @@ public class WriteData {
     public static void saveAppointments()
         { 
             JSONArray appointmentList = new JSONArray();
-
+            JSONObject temp = new JSONObject();
             for (int i=0; i<main.appointments.size();i++)
             {
                 
@@ -185,17 +195,15 @@ public class WriteData {
             appointmentDetails.put("state", main.appointments.get(i).getState());
 
             
-            JSONObject appointmentObject = new JSONObject(); 
-            appointmentObject.put("appointments", appointmentDetails);
             
             
-            appointmentList.add(appointmentObject);
+            appointmentList.add(appointmentDetails);
             }
-            
+            temp.put("appointments", appointmentList);
             //Write JSON file
             try (FileWriter file = new FileWriter("src\\Data\\appointments.json")) {
  
-                file.write(appointmentList.toJSONString());
+                file.write(temp.toJSONString());
                 file.flush();
  
             } catch (IOException e) 
@@ -211,7 +219,7 @@ public class WriteData {
     public static void saveAppointmentNotes()
         { 
             JSONArray appointmentNoteList = new JSONArray();
-
+            JSONObject temp = new JSONObject();
             for (int i=0; i<main.appointmentNotes.size();i++)
             {
                 
@@ -223,17 +231,16 @@ public class WriteData {
             appointmentNoteDetails.put("notes", main.appointmentNotes.get(i).getNotes());
 
             
-            JSONObject appointmentNoteObject = new JSONObject(); 
-            appointmentNoteObject.put("appointmentNotes", appointmentNoteDetails);
             
             
-            appointmentNoteList.add(appointmentNoteObject);
+            
+            appointmentNoteList.add(appointmentNoteDetails);
             }
-            
+            temp.put("appointmentNotes", appointmentNoteList);
             //Write JSON file
             try (FileWriter file = new FileWriter("src\\Data\\appointmentNotes.json")) {
  
-                file.write(appointmentNoteList.toJSONString());
+                file.write(temp.toJSONString());
                 file.flush();
  
             } catch (IOException e) 
@@ -247,7 +254,7 @@ public class WriteData {
     public static void savePrescriptions()
         { 
             JSONArray prescriptionList = new JSONArray();
-
+            JSONObject temp = new JSONObject();
             for (int i=0; i<main.prescriptions.size();i++)
             {
                 
@@ -260,17 +267,16 @@ public class WriteData {
             prescriptionDetails.put("quantity", main.prescriptions.get(i).getQuantity());
 
             
-            JSONObject prescriptionObject = new JSONObject(); 
-            prescriptionObject.put("prescriptions", prescriptionDetails);
+           
             
             
-            prescriptionList.add(prescriptionObject);
+            prescriptionList.add(prescriptionDetails);
             }
-            
+            temp.put("prescriptions", prescriptionList);
             //Write JSON file
             try (FileWriter file = new FileWriter("src\\Data\\prescriptions.json")) {
  
-                file.write(prescriptionList.toJSONString());
+                file.write(temp.toJSONString());
                 file.flush();
  
             } catch (IOException e) 
@@ -284,7 +290,7 @@ public class WriteData {
     public static void saveFeedback()
         { 
             JSONArray feedbackList = new JSONArray();
-
+            JSONObject temp = new JSONObject();
             for (int i=0; i<main.feedback.size();i++)
             {
                 
@@ -296,18 +302,16 @@ public class WriteData {
             feedbackDetails.put("rating", main.feedback.get(i).getRating());
 
 
-            
-            JSONObject feedbackObject = new JSONObject(); 
-            feedbackObject.put("feedbacks", feedbackDetails);
+
             
             
-            feedbackList.add(feedbackObject);
+            feedbackList.add(feedbackDetails);
             }
-            
+            temp.put("feedbacks", feedbackList);
             //Write JSON file
             try (FileWriter file = new FileWriter("src\\Data\\feedback.json")) {
  
-                file.write(feedbackList.toJSONString());
+                file.write(temp.toJSONString());
                 file.flush();
  
             } catch (IOException e) 
@@ -321,7 +325,7 @@ public class WriteData {
     public static void saveMedicine()
         { 
             JSONArray medicineList = new JSONArray();
-
+            JSONObject temp = new JSONObject();
             for (int i=0; i<main.medicines.size();i++)
             {
                 
@@ -330,19 +334,15 @@ public class WriteData {
             medicineDetails.put("name", main.medicines.get(i).getName());
             medicineDetails.put("lowQuantity", main.medicines.get(i).isLowQuantity());
 
-
-            
-            JSONObject medicineObject = new JSONObject(); 
-            medicineObject.put("medicines", medicineDetails);
             
             
-            medicineList.add(medicineObject);
+            medicineList.add(medicineDetails);
             }
-            
+            temp.put("medicines", medicineList);
             //Write JSON file
             try (FileWriter file = new FileWriter("src\\Data\\medicines.json")) {
  
-                file.write(medicineList.toJSONString());
+                file.write(temp.toJSONString());
                 file.flush();
  
             } catch (IOException e) 

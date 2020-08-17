@@ -8,6 +8,7 @@ import System.main;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import Users.*;
+import Data.*;
 /**
  *
  * @author patrick
@@ -174,8 +175,18 @@ public class adminCreateAdmin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(frame, "That username is already in use");
         }
         else{
+            String id = null;
+                        if ((main.admins.size() + 1) > 9)
+                        {
+                        id = "A00" + String.valueOf(main.admins.size() + 1);
+            
+                        }
+                        else
+                        {
+                        id = "A000" + String.valueOf(main.admins.size() + 1);
+                        }
             //push into array
-            Admin newAdmin = new Admin(userId, name, password, address);
+            Admin newAdmin = new Admin(id, name, password, address);
             main.admins.add(newAdmin);
             JFrame frame = new JFrame();
             userIdBox.setText("");
@@ -188,8 +199,14 @@ public class adminCreateAdmin extends javax.swing.JFrame {
         
     }//GEN-LAST:event_createBtnActionPerformed
 
+    public static void save()
+    {
+        WriteData.saveAll();
+    }
     public void exit()
     {
+        save();
+              
         this.dispose();
         adminDashboard dash = new adminDashboard();
         dash.setVisible(true);    

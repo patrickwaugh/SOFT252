@@ -5,6 +5,7 @@
  */
 package GUI.Patient;
 
+import Data.WriteData;
 import java.lang.*;
 import java.util.*;
 import Users.*;
@@ -158,13 +159,18 @@ public class patientRateDoctor extends javax.swing.JFrame {
         
         main.feedback.add(feedbackTemp);
         
+        save();
         this.dispose();
         patientDashboard dash = new patientDashboard();
         dash.setVisible(true);
         
         
     }//GEN-LAST:event_submitBtnActionPerformed
-
+    
+    public static void save()
+    {
+        WriteData.saveAll();
+    }
     private void doctorDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorDropDownActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_doctorDropDownActionPerformed

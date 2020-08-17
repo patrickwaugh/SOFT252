@@ -179,7 +179,7 @@ public class requestAccount extends javax.swing.JFrame {
         
         main.patients.add(new Patient(id, nameBox.getText(), addressBox.getText(), genderBox.getText(), Integer.valueOf(ageBox.getText()), passwordBox.getText(), "false"));
         
-        WriteData.savePatients();
+        WriteData.saveAll();
         this.dispose();
         LoginScreen dash = new LoginScreen();
         dash.setVisible(true);
