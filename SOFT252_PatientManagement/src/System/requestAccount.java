@@ -8,6 +8,7 @@ package System;
 import java.lang.*;
 import java.util.*;
 import Users.*;
+import Data.*;
 
 /**
  *
@@ -165,8 +166,20 @@ public class requestAccount extends javax.swing.JFrame {
 
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         // TODO add your handling code here:
-        main.patients.add(new Patient(String.valueOf(main.patients.size() + 1), nameBox.getText(), addressBox.getText(), genderBox.getText(), Integer.valueOf(ageBox.getText()), passwordBox.getText(), "false"));
+        String id = null;
+        if ((main.patients.size() + 1) > 9)
+        {
+            id = "P00" + String.valueOf(main.patients.size() + 1);
+            
+        }
+        else
+        {
+            id = "P000" + String.valueOf(main.patients.size() + 1);
+        }
         
+        main.patients.add(new Patient(id, nameBox.getText(), addressBox.getText(), genderBox.getText(), Integer.valueOf(ageBox.getText()), passwordBox.getText(), "false"));
+        
+        WriteData.savePatients();
         this.dispose();
         LoginScreen dash = new LoginScreen();
         dash.setVisible(true);

@@ -135,9 +135,8 @@ public class doctorAppointmentNotes extends javax.swing.JFrame {
             JFrame frame = new JFrame();
             JOptionPane.showMessageDialog(frame, "Please Select a patient");
         }
-        else{           
-           int apptNotesId = main.appointmentNotes.size() + 1;
-           
+        else
+        {                      
            
            Patient patient = null;
            for (int i =0; i< main.patients.size(); i++)
@@ -157,7 +156,8 @@ public class doctorAppointmentNotes extends javax.swing.JFrame {
                }              
            }
            
-           AppointmentNotes newApptNotes = new AppointmentNotes(String.valueOf(apptNotesId), patient, doctor, notesBox.getText(), dateBox.getText());
+           AppointmentNotes temp = new AppointmentNotes(String.valueOf(main.appointmentNotes.size() + 1), patient, doctor, notesBox.getText(), dateBox.getText());
+           AppointmentNotes newApptNotes = temp;
            main.appointmentNotes.add(newApptNotes);
            JFrame frame = new JFrame();
            JOptionPane.showMessageDialog(frame, "Consultation saved");

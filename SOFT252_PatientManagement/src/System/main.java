@@ -58,6 +58,9 @@ public class main {
         
         List<Feedback> feedbackList = ReadData.returnFeedback();
         feedback = feedbackList;
+        
+        List<AppointmentNotes> appointmentNotesList = ReadData.returnAppointmentNotes();
+        appointmentNotes = appointmentNotesList;
     
     }
     public static Person currentUser;

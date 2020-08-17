@@ -22,6 +22,14 @@ public class AppointmentNotes {
         this.date = date;
     }
 
+    public String getNotesId() {
+        return notesId;
+    }
+
+    public void setNotesId(String notesId) {
+        this.notesId = notesId;
+    }
+    
     public Patient getPatient() {
         return patient;
     }

@@ -6,7 +6,7 @@
 package System;
 
 import GUI.Admin.adminDashboard;
-import GUI.Patient.patientDashboard;
+import GUI.Doctor.*;
 import javax.swing.table.DefaultTableModel;
 import Users.*;
 
@@ -120,8 +120,8 @@ public class doctorFeedback extends javax.swing.JFrame {
                 adminDashboard dash = new adminDashboard();
                 dash.setVisible(true);
                 break;
-            case 'P':
-                patientDashboard dash1 = new patientDashboard();
+            case 'D':
+                doctorDashboard dash1 = new doctorDashboard();
                 dash1.setVisible(true);
         }
         this.dispose();

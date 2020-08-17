@@ -321,13 +321,14 @@ public class secretaryDashboard extends javax.swing.JFrame {
             //Selection needed
         }
         else{
-            String selectedAppt = accountsTbl.getValueAt(selected, 0).toString();
+            String selectedAppt = apptRequestTbl.getValueAt(selected, 0).toString();
             for (int i = 0; i< main.appointments.size(); i++)
             {
                 if (main.appointments.get(i).getAppointmentId().equals(selectedAppt))
                 {
                     main.appointments.get(i).setState("confirmed");
-                    break;
+                    
+                    
                 }
             }
         }
@@ -335,22 +336,20 @@ public class secretaryDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_apptRequestBtnActionPerformed
 
     private void apptDenyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apptDenyBtnActionPerformed
-        int selected = accountReqTbl.getSelectedRow();
+        int selected = apptRequestTbl.getSelectedRow();
         if (selected == -1)
         {
             JFrame frame = new JFrame();
             JOptionPane.showMessageDialog(frame, "Please select an appointment to remove");
         }
         else{
-            String selectedAppt = accountsTbl.getValueAt(selected, 0).toString();
+            String selectedAppt = apptRequestTbl.getValueAt(selected, 0).toString();
             for (int i = 0; i< main.patients.size(); i++)
             {
-                
-
                 if (main.appointments.get(i).getAppointmentId().equals(selectedAppt))
                 {
                     main.appointments.get(i).setState("denied");
-                    break;
+                    
                 }
             }
         }
@@ -366,15 +365,14 @@ public class secretaryDashboard extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(frame, "Please select an account to remove");
         }
         else{
-            String selectedUser = accountsTbl.getValueAt(selected, 0).toString();
+            String selectedUser = accountReqTbl.getValueAt(selected, 0).toString();
             for (int i = 0; i< main.patients.size(); i++)
             {
-                
-
                 if (main.patients.get(i).getUserId().equals(selectedUser))
                 {
                     main.patients.get(i).setActive("true");
-                    break;
+                    refresh();
+                    
                 }
             }
         }
@@ -390,13 +388,13 @@ public class secretaryDashboard extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(frame, "Please select an account to remove");
         }
         else{
-            String selectedMed = accountsTbl.getValueAt(selected, 0).toString();
+            String selectedMed = medsTbl.getValueAt(selected, 0).toString();
             for(int i = 0; i< main.medicines.size(); i++)
             {
                 if (main.medicines.get(i).getMedicineId().equals(selectedMed))
                 {
                     main.medicines.get(i).setLowQuantity(false);
-                    break;
+                    
                 }
             }
         }

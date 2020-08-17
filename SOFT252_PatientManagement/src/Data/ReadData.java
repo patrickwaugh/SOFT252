@@ -449,7 +449,7 @@ public class ReadData {
             for (int i = 0; i < appointmentNotes.size(); i++) {
                 JSONObject currentAppointment = (JSONObject) appointmentNotes.get(i);
                 
-                String noteId = currentAppointment.get("noteId").toString();
+                String noteId = currentAppointment.get("notesId").toString();
                 
                 String patientId = (currentAppointment.get("patient").toString());
                 
