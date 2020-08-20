@@ -142,7 +142,7 @@ public class requestAppointment extends javax.swing.JFrame {
             
         }
                 
-        newAppointment = new Appointment(String.valueOf(apptId), patient, doctor, date, "Pending");
+        newAppointment = new Appointment(String.valueOf(apptId), patient, doctor, date, "pending");
         
         main.appointments.add(newAppointment);
         

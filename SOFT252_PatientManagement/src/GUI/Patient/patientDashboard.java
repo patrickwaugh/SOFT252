@@ -6,8 +6,7 @@
 package GUI.Patient;
 
 
-import System.main;
-
+import System.*;
 /**
  *
  * @author patrick
@@ -36,6 +35,7 @@ public class patientDashboard extends javax.swing.JFrame {
         ratingsBtn = new javax.swing.JButton();
         deleteBtn = new javax.swing.JButton();
         nameLbl = new javax.swing.JLabel();
+        logOffBTn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,6 +64,13 @@ public class patientDashboard extends javax.swing.JFrame {
 
         nameLbl.setText("jLabel1");
 
+        logOffBTn.setText("Log Out");
+        logOffBTn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logOffBTnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -79,7 +86,8 @@ public class patientDashboard extends javax.swing.JFrame {
                         .addComponent(prescriptionsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(appoitmentsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(nameLbl))
+                    .addComponent(nameLbl)
+                    .addComponent(logOffBTn, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -95,7 +103,9 @@ public class patientDashboard extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(deleteBtn)
                     .addComponent(ratingsBtn))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(logOffBTn)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -122,6 +132,15 @@ public class patientDashboard extends javax.swing.JFrame {
         this.dispose(); 
 
     }//GEN-LAST:event_prescriptionsBtnActionPerformed
+
+    private void logOffBTnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOffBTnActionPerformed
+        // TODO add your handling code here:
+        main.currentUser = null;
+        LoginScreen dash = new LoginScreen();
+        dash.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_logOffBTnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,6 +180,7 @@ public class patientDashboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton appoitmentsBtn;
     private javax.swing.JButton deleteBtn;
+    private javax.swing.JButton logOffBTn;
     private javax.swing.JLabel nameLbl;
     private javax.swing.JButton prescriptionsBtn;
     private javax.swing.JButton ratingsBtn;

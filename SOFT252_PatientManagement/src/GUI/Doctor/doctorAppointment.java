@@ -9,6 +9,7 @@ import Data.WriteData;
 import System.main;
 import Objects.Appointment;
 import Users.*;
+import GUI.Secretary.*;
 
 /**
  *
@@ -160,9 +161,7 @@ public class doctorAppointment extends javax.swing.JFrame {
         main.appointments.add(newAppointment);
         
         save();
-        this.dispose();
-        doctorDashboard dash = new doctorDashboard();
-        dash.setVisible(true);
+        exit();
 
     }//GEN-LAST:event_submitBtnActionPerformed
 
@@ -172,11 +171,29 @@ public class doctorAppointment extends javax.swing.JFrame {
     }
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
-        doctorDashboard dash = new doctorDashboard();
-        dash.setVisible(true);
-        this.dispose();
+        exit();
+        
     }//GEN-LAST:event_backBtnActionPerformed
 
+    public void exit()
+    {
+        char first = main.currentUser.getUserId().charAt(0);
+        
+        if (first == 'D')
+        {
+           doctorDashboard dash = new doctorDashboard();
+           dash.setVisible(true);
+           this.dispose(); 
+            
+        }
+        else
+        {
+            secretaryDashboard dash = new secretaryDashboard();
+            dash.setVisible(true);
+            this.dispose();
+        }
+        
+    }
     private void doctorDropBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorDropBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_doctorDropBoxActionPerformed

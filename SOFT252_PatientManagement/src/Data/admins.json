@@ -1,1 +1,20 @@
-{"admins":[{"password":"a0001","address":"Bag end","name":"Frodo Baggins","userId":"A0001"},{"password":"a0002","address":"Some other place in the Shire","name":"Meriadoc Brandybuck","userId":"A0002"},{"password":"a0003","address":"Some other place in the Shire","name":"Samwise Gamgee","userId":"A0003"}]}
+{"admins":[
+		{	
+			"userId": "A0001",
+                        "name": "Frodo Baggins",
+                        "address": "Bag end",
+			"password": "a0001"
+		},
+		{
+			"userId": "A0002",
+                        "name": "Meriadoc Brandybuck",
+                        "address": "Some other place in the Shire",
+			"password": "a0002"
+		},
+                {
+			"userId": "A0003",
+                        "name": "Samwise Gamgee",
+                        "address": "Some other place in the Shire",
+			"password": "a0003"
+                }]
+        }

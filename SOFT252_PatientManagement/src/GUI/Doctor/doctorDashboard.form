@@ -27,22 +27,23 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                   <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="orderBtn" max="32767" attributes="0"/>
-                              <Component id="startApptBtn" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="prescriptionBtn" max="32767" attributes="0"/>
-                              <Component id="FeedbackBtn" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="appointmentBtn" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="orderBtn" max="32767" attributes="0"/>
+                          <Component id="startApptBtn" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="titleLbl" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="prescriptionBtn" max="32767" attributes="0"/>
+                          <Component id="FeedbackBtn" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="appointmentBtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="logOffBtn" alignment="1" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
+                  <Component id="titleLbl" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -65,6 +66,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="startApptBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="FeedbackBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="logOffBtn" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -157,6 +159,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="startApptBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="logOffBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Log Off"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logOffBtnActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

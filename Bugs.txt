@@ -1,1 +1,0 @@
-The only bug still remaining is a crash that occurs when a doctor user tries to save appointment notes.

@@ -189,8 +189,8 @@ public class WriteData {
                 
             JSONObject appointmentDetails = new JSONObject();
             appointmentDetails.put("appointmentId", main.appointments.get(i).getAppointmentId());
-            appointmentDetails.put("patient", main.appointments.get(i).getPatient().getName());
-            appointmentDetails.put("doctor", main.appointments.get(i).getDoctor().getName());
+            appointmentDetails.put("patient", main.appointments.get(i).getPatient().getUserId());
+            appointmentDetails.put("doctor", main.appointments.get(i).getDoctor().getUserId());
             appointmentDetails.put("date", main.appointments.get(i).getDate());
             appointmentDetails.put("state", main.appointments.get(i).getState());
 
@@ -225,8 +225,8 @@ public class WriteData {
                 
             JSONObject appointmentNoteDetails = new JSONObject();
             appointmentNoteDetails.put("notesId", main.appointmentNotes.get(i).getNotesId());
-            appointmentNoteDetails.put("patient", main.appointmentNotes.get(i).getPatient().getName());
-            appointmentNoteDetails.put("doctor", main.appointmentNotes.get(i).getDoctor().getName());
+            appointmentNoteDetails.put("patient", main.appointmentNotes.get(i).getPatient().getUserId());
+            appointmentNoteDetails.put("doctor", main.appointmentNotes.get(i).getDoctor().getUserId());
             appointmentNoteDetails.put("date", main.appointmentNotes.get(i).getDate());
             appointmentNoteDetails.put("notes", main.appointmentNotes.get(i).getNotes());
 
@@ -260,8 +260,8 @@ public class WriteData {
                 
             JSONObject prescriptionDetails = new JSONObject();
             prescriptionDetails.put("prescriptionId", main.prescriptions.get(i).getPrescriptionId());
-            prescriptionDetails.put("patient", main.prescriptions.get(i).getPatient().getName());
-            prescriptionDetails.put("doctor", main.prescriptions.get(i).getDoctor().getName());
+            prescriptionDetails.put("patient", main.prescriptions.get(i).getPatient().getUserId());
+            prescriptionDetails.put("doctor", main.prescriptions.get(i).getDoctor().getUserId());
             prescriptionDetails.put("medicineId", main.prescriptions.get(i).getMedicine().getMedicineId());
             prescriptionDetails.put("dosage", main.prescriptions.get(i).getDosage());
             prescriptionDetails.put("quantity", main.prescriptions.get(i).getQuantity());
@@ -296,8 +296,8 @@ public class WriteData {
                 
             JSONObject feedbackDetails = new JSONObject();
             feedbackDetails.put("feedbackId", main.feedback.get(i).getFeedbackId());
-            feedbackDetails.put("patient", main.feedback.get(i).getPatient().getName());
-            feedbackDetails.put("doctor", main.feedback.get(i).getDoctor().getName());
+            feedbackDetails.put("patient", main.feedback.get(i).getPatient().getUserId());
+            feedbackDetails.put("doctor", main.feedback.get(i).getDoctor().getUserId());
             feedbackDetails.put("feedback", main.feedback.get(i).getFeedback());
             feedbackDetails.put("rating", main.feedback.get(i).getRating());
 
