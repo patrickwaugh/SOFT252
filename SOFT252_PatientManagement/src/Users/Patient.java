@@ -11,6 +11,7 @@ package Users;
  */
 public class Patient extends Person
 {    
+    //Constructor//
     public Patient(String userId, String name, String address, String gender, int age, String password, String active)
     {
     this.userId = userId;
@@ -21,5 +22,6 @@ public class Patient extends Person
     this.password = password;
     this.active = active;
     }
-
+    
+    //Inherits Getters and Setters from Person class//
 }

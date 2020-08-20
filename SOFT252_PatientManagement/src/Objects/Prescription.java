@@ -19,7 +19,7 @@ public class Prescription
     protected Medicine medicine;
     protected int quantity;
     
-
+    //Contrsuctor//
     public Prescription(String prescriptionId, Doctor doctor, Patient patient, Medicine medicine, int quantity, String dosage) {
         this.prescriptionId = prescriptionId;
         this.doctor = doctor;
@@ -29,6 +29,7 @@ public class Prescription
         this.medicine = medicine;
     }
 
+    //Getters and Setters//
     public String getPrescriptionId() {
         return prescriptionId;
     }

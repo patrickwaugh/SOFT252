@@ -14,12 +14,14 @@ public class Medicine
     protected String medicineId, name;
     protected boolean lowQuantity;
 
+    //Constructor//
     public Medicine(String medicineId, String name, boolean lowQuantity) {
         this.medicineId = medicineId;
         this.name = name;
         this.lowQuantity = lowQuantity;
     }
     
+    //Getters and Setters//
     public String getMedicineId() {
         return medicineId;
     }

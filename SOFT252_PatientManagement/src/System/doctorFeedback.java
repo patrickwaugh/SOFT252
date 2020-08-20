@@ -12,7 +12,7 @@ import Users.*;
 
 /**
  *
- * @author ctaylor20
+ * @author patrick
  */
 public class doctorFeedback extends javax.swing.JFrame {
 

@@ -7,13 +7,14 @@ package Objects;
 import Users.*;
 /**
  *
- * @author User
+ * @author patrick
  */
 public class AppointmentNotes {
     protected Patient patient;
     protected Doctor doctor;
     protected String notesId, notes, date;
 
+    //Constructor//
     public AppointmentNotes(String notesId, Patient patient, Doctor doctor, String notes, String date) {
         this.notesId = notesId;
         this.patient = patient;
@@ -22,6 +23,7 @@ public class AppointmentNotes {
         this.date = date;
     }
 
+    //Getters and Setters//
     public String getNotesId() {
         return notesId;
     }

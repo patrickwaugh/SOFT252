@@ -16,6 +16,7 @@ public class Feedback {
     protected String feedbackId, feedback;
     protected int rating;
 
+    //Constructors//
     public Feedback(String feedbackId, Patient patient, Doctor doctor, String feedback, int rating) {
         this.feedbackId = feedbackId;
         this.patient = patient;
@@ -24,6 +25,7 @@ public class Feedback {
         this.rating = rating;
     }
 
+    //Getters and Setters//
     public String getFeedbackId() {
         return feedbackId;
     }

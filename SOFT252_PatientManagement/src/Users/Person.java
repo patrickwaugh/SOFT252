@@ -7,12 +7,14 @@ package Users;
 
 /**
  *
- * @author User
+ * @author patrick
  */
 public class Person {
     protected String userId, password, name, address, gender, active;
     protected int age;
 
+    
+    //Getters and Setters//
     public String getUserId() {
         return userId;
     }

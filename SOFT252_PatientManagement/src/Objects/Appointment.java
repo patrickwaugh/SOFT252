@@ -17,6 +17,7 @@ public class Appointment
     protected Doctor doctor;
     protected String appointmentId, date, state;
     
+    //Constructor//
     public Appointment(String appointmentId, Patient patient, Doctor doctor, String date, String state) {
         this.appointmentId = appointmentId;
         this.patient = patient;
@@ -25,6 +26,7 @@ public class Appointment
         this.state = state;
     }
 
+    //Getters and Setters//
     public String getAppointmentId() {
         return appointmentId;
     }
